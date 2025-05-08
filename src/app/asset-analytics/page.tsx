@@ -2,7 +2,6 @@ import { SampleBarChart } from "@/components/charts/sample-bar-chart"
 import { SampleLineChart } from "@/components/charts/sample-line-chart"
 import { SampleDataTable } from "@/components/tables/sample-data-table"
 import { SummaryCard } from "@/components/summaries/summary-card"
-import { DollarSign, TrendingUp as TrendingUpIcon } from "lucide-react" // Renamed to avoid conflict
 
 export default function AssetAnalyticsPage() {
   return (
@@ -13,14 +12,14 @@ export default function AssetAnalyticsPage() {
         <SummaryCard 
           title="Total Assets Under Management" 
           value="$12,345,678" 
-          icon={DollarSign}
+          iconName="DollarSign"
           trend="+2.5% from last month"
           trendColor="text-green-600 dark:text-green-400"
         />
         <SummaryCard 
           title="YTD Return" 
           value="7.8%" 
-          icon={TrendingUpIcon}
+          iconName="TrendingUp"
           trend="-0.5% from last quarter"
           trendColor="text-red-600 dark:text-red-400"
         />

@@ -2,7 +2,6 @@ import { SampleLineChart } from "@/components/charts/sample-line-chart"
 import { SampleBarChart } from "@/components/charts/sample-bar-chart"
 import { SampleDataTable } from "@/components/tables/sample-data-table"
 import { SummaryCard } from "@/components/summaries/summary-card"
-import { CreditCard, TrendingDown, Percent } from "lucide-react"
 
 export default function FinancialAnalyticsPage() {
   return (
@@ -13,21 +12,21 @@ export default function FinancialAnalyticsPage() {
         <SummaryCard 
           title="Total Revenue (YTD)" 
           value="$1,250,000" 
-          icon={CreditCard}
+          iconName="CreditCard"
           trend="+8.2% vs last year"
           trendColor="text-green-600 dark:text-green-400"
         />
         <SummaryCard 
           title="Total Expenses (YTD)" 
           value="$450,000" 
-          icon={TrendingDown}
+          iconName="TrendingDown"
           trend="+3.1% vs last year"
           trendColor="text-red-600 dark:text-red-400"
         />
         <SummaryCard 
           title="Net Profit Margin" 
           value="64%" 
-          icon={Percent}
+          iconName="Percent"
         />
         <SummaryCard 
           title="Average Revenue per Client" 

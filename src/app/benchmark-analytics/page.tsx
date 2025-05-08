@@ -1,7 +1,6 @@
 import { SampleLineChart } from "@/components/charts/sample-line-chart"
 import { SampleDataTable } from "@/components/tables/sample-data-table"
 import { SummaryCard } from "@/components/summaries/summary-card"
-import { Target, Activity, Sigma } from "lucide-react"
 
 export default function BenchmarkAnalyticsPage() {
   return (
@@ -12,20 +11,20 @@ export default function BenchmarkAnalyticsPage() {
         <SummaryCard 
           title="Portfolio Alpha (vs S&P 500)" 
           value="1.25%" 
-          icon={Target}
+          iconName="Target"
           trend="Improving from 0.95% last quarter"
           trendColor="text-green-600 dark:text-green-400"
         />
         <SummaryCard 
           title="Sharpe Ratio" 
           value="0.85" 
-          icon={Activity}
+          iconName="Activity"
           description="Risk-adjusted return"
         />
         <SummaryCard 
           title="Tracking Error" 
           value="3.2%" 
-          icon={Sigma}
+          iconName="Sigma"
         />
         <SummaryCard 
           title="Information Ratio" 

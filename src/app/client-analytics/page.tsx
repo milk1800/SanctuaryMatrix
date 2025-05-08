@@ -2,7 +2,6 @@ import { SamplePieChart } from "@/components/charts/sample-pie-chart"
 import { SampleBarChart } from "@/components/charts/sample-bar-chart"
 import { SampleDataTable } from "@/components/tables/sample-data-table"
 import { SummaryCard } from "@/components/summaries/summary-card"
-import { Users, UserPlus, UserMinus } from "lucide-react"
 
 export default function ClientAnalyticsPage() {
   return (
@@ -13,14 +12,14 @@ export default function ClientAnalyticsPage() {
         <SummaryCard 
           title="Total Active Clients" 
           value="238" 
-          icon={Users}
+          iconName="Users"
           trend="+5 new clients this month"
           trendColor="text-green-600 dark:text-green-400"
         />
         <SummaryCard 
           title="Average AUM per Client" 
           value="$51,872" 
-          icon={UserPlus}
+          iconName="UserPlus"
         />
         <SummaryCard 
           title="Client Retention Rate" 
@@ -30,7 +29,7 @@ export default function ClientAnalyticsPage() {
          <SummaryCard 
           title="New vs. Lost Clients (QTD)" 
           value="15 / 3"
-          icon={UserMinus} 
+          iconName="UserMinus" 
           description="New clients / Lost clients"
         />
       </div>
