@@ -59,7 +59,30 @@ export default function AssetAnalyticsPage() {
       </Card>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="space-y-6"> {/* Stacked Inflows and Outflows */}
+          <SummaryCard
+            title="Inflows (MTD)"
+            value="$500,000"
+            iconName={"ArrowDownCircle" as IconName}
+            trend="+10% vs last month"
+            trendColor="text-green-600 dark:text-green-400"
+          />
+          <SummaryCard
+            title="Outflows (MTD)"
+            value="$200,000"
+            iconName={"ArrowUpCircle" as IconName}
+            trend="+5% vs last month" 
+            trendColor="text-red-600 dark:text-red-400"
+          />
+        </div>
         <SummaryCard
+          title="Net Flows (MTD)"
+          value="$300,000"
+          iconName={"TrendingUp" as IconName} // Can use TrendingUp or a specific NetFlow icon if available
+          trend="+$50k vs last month"
+          trendColor="text-green-600 dark:text-green-400"
+        />
+         <SummaryCard
           title="# of Households"
           value="150"
           iconName={"Users" as IconName}

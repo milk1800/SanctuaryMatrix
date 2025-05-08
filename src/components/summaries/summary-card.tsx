@@ -16,6 +16,8 @@ import {
   Archive,
   FileText,
   List, // Added List icon
+  ArrowDownCircle, // Added ArrowDownCircle icon
+  ArrowUpCircle,   // Added ArrowUpCircle icon
   type LucideIcon 
 } from "lucide-react"
 
@@ -34,7 +36,9 @@ const iconComponentsMap: Record<string, LucideIcon> = {
   Percent,
   Archive,
   FileText,
-  List, // Added List icon mapping
+  List,
+  ArrowDownCircle,
+  ArrowUpCircle,
 };
 
 export type IconName = keyof typeof iconComponentsMap;
