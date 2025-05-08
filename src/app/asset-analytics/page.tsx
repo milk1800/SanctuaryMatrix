@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -78,7 +79,7 @@ export default function AssetAnalyticsPage() {
         <SummaryCard
           title="Net Flows (MTD)"
           value="$300,000"
-          iconName={"TrendingUp" as IconName} // Can use TrendingUp or a specific NetFlow icon if available
+          iconName={"TrendingUp" as IconName} 
           trend="+$50k vs last month"
           trendColor="text-green-600 dark:text-green-400"
         />
@@ -120,7 +121,7 @@ export default function AssetAnalyticsPage() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <SampleBarChart title="Asset Allocation by Type" description="Distribution of assets across different categories." />
-        <SampleLineChart title="Portfolio Performance Over Time" description="Growth of a $10,000 investment." />
+        <SampleLineChart title="Book of Business Performance over time" description="Growth of a $10,000 investment." />
       </div>
       
       <SampleDataTable title="Top Performing Assets" description="Assets with the highest returns year-to-date." />
