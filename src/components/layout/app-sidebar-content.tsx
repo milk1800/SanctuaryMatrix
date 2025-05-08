@@ -31,7 +31,7 @@ export function AppSidebarContent() {
         <Link href="/" className="flex items-center gap-2">
           <Briefcase className="h-7 w-7 text-primary" />
           <h1 className="text-xl font-semibold text-foreground group-data-[collapsible=icon]:hidden">
-            AdviseAI
+            Analytics AI
           </h1>
         </Link>
       </SidebarHeader>

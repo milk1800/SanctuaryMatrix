@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'AdviseAI Dashboard',
+  title: 'Analytics AI Dashboard',
   description: 'Business Analytics for Financial Advisors',
 };
 
