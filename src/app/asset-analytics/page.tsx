@@ -1,3 +1,4 @@
+tsx
 "use client";
 
 import { useState } from 'react';
@@ -59,6 +60,16 @@ export default function AssetAnalyticsPage() {
       </Card>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <SummaryCard
+          title="# of Households"
+          value="150"
+          iconName={"Users" as IconName}
+        />
+        <SummaryCard
+          title="# of Accounts"
+          value="320"
+          iconName={"List" as IconName}
+        />
         <SummaryCard 
           title="Total Assets Under Management" 
           value="$12,345,678" 
@@ -82,16 +93,6 @@ export default function AssetAnalyticsPage() {
           title="Average Asset Age" 
           value="3.2 Years" 
           iconName={"Activity" as IconName}
-        />
-        <SummaryCard
-          title="# of Households"
-          value="150"
-          iconName={"Users" as IconName}
-        />
-        <SummaryCard
-          title="# of Accounts"
-          value="320"
-          iconName={"List" as IconName}
         />
       </div>
 
