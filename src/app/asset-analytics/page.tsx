@@ -83,6 +83,16 @@ export default function AssetAnalyticsPage() {
           value="3.2 Years" 
           iconName={"Activity" as IconName}
         />
+        <SummaryCard
+          title="# of Households"
+          value="150"
+          iconName={"Users" as IconName}
+        />
+        <SummaryCard
+          title="# of Accounts"
+          value="320"
+          iconName={"List" as IconName}
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">

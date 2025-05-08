@@ -15,6 +15,7 @@ import {
   Percent,
   Archive,
   FileText,
+  List, // Added List icon
   type LucideIcon 
 } from "lucide-react"
 
@@ -33,6 +34,7 @@ const iconComponentsMap: Record<string, LucideIcon> = {
   Percent,
   Archive,
   FileText,
+  List, // Added List icon mapping
 };
 
 export type IconName = keyof typeof iconComponentsMap;
