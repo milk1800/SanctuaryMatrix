@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,9 +16,10 @@ import {
   Percent,
   Archive,
   FileText,
-  List, // Added List icon
-  ArrowDownCircle, // Added ArrowDownCircle icon
-  ArrowUpCircle,   // Added ArrowUpCircle icon
+  List, 
+  ArrowDownCircle, 
+  ArrowUpCircle,
+  PieChart, // Added PieChart icon
   type LucideIcon 
 } from "lucide-react"
 
@@ -39,6 +41,7 @@ const iconComponentsMap: Record<string, LucideIcon> = {
   List,
   ArrowDownCircle,
   ArrowUpCircle,
+  PieChart, // Added PieChart to map
 };
 
 export type IconName = keyof typeof iconComponentsMap;

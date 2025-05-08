@@ -76,13 +76,20 @@ export default function AssetAnalyticsPage() {
             trendColor="text-red-600 dark:text-red-400"
           />
         </div>
-        <SummaryCard
-          title="Net Flows (MTD)"
-          value="$300,000"
-          iconName={"TrendingUp" as IconName} 
-          trend="+$50k vs last month"
-          trendColor="text-green-600 dark:text-green-400"
-        />
+        <div className="space-y-6"> {/* Stacked Net Flows and % Accounts in Model Portfolios */}
+          <SummaryCard
+            title="Net Flows (MTD)"
+            value="$300,000"
+            iconName={"TrendingUp" as IconName} 
+            trend="+$50k vs last month"
+            trendColor="text-green-600 dark:text-green-400"
+          />
+          <SummaryCard
+            title="% of Accounts in Model Portfolios"
+            value="65%"
+            iconName={"PieChart" as IconName}
+          />
+        </div>
          <SummaryCard
           title="# of Households"
           value="150"
