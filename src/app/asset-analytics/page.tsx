@@ -90,11 +90,18 @@ export default function AssetAnalyticsPage() {
             iconName={"PieChart" as IconName}
           />
         </div>
-         <SummaryCard
-          title="# of Households"
-          value="150"
-          iconName={"Users" as IconName}
-        />
+        <div className="space-y-6"> {/* Stacked # of Households and Cash Allocation */}
+          <SummaryCard
+            title="# of Households"
+            value="150"
+            iconName={"Users" as IconName}
+          />
+          <SummaryCard
+            title="Cash Allocation"
+            value="10%" 
+            iconName={"Percent" as IconName}
+          />
+        </div>
         <SummaryCard
           title="# of Accounts"
           value="320"
