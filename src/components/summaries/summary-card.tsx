@@ -13,6 +13,8 @@ import {
   CreditCard,
   TrendingDown,
   Percent,
+  Archive,
+  FileText,
   type LucideIcon 
 } from "lucide-react"
 
@@ -29,6 +31,8 @@ const iconComponentsMap: Record<string, LucideIcon> = {
   CreditCard,
   TrendingDown,
   Percent,
+  Archive,
+  FileText,
 };
 
 export type IconName = keyof typeof iconComponentsMap;
