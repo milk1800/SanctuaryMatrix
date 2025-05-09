@@ -104,24 +104,7 @@ export default function AssetAnalyticsPage() {
           trendColor="text-green-600 dark:text-green-400"
         />
         
-        {/* Row 3: Client Base Composition */}
-        <SummaryCard
-          title="# of Households"
-          value="150"
-          iconName={"Users" as IconName}
-        />
-        <SummaryCard
-          title="# of Accounts"
-          value="320"
-          iconName={"List" as IconName}
-        />
-        <SummaryCard
-          title="Cash Allocation %" 
-          value="10%" 
-          iconName={"Percent" as IconName}
-        />
-
-        {/* Row 4: Portfolio Health & Depth */}
+        {/* Row 3: Portfolio Health & Client Liquidity (formerly Client Base Composition & Portfolio Health) */}
         <SummaryCard 
           title="Average Asset Age" 
           value="3.2 Years" 
@@ -133,10 +116,9 @@ export default function AssetAnalyticsPage() {
           iconName={"Archive" as IconName}
         />
         <SummaryCard
-          title="Top Asset Class"
-          value="U.S. Equity – 42%"
-          iconName={"Layers" as IconName}
-          description="Largest allocation by asset type"
+          title="Cash Allocation %" 
+          value="10%" 
+          iconName={"Percent" as IconName}
         />
       </div>
 
