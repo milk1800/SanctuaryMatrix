@@ -1,3 +1,4 @@
+
 import { SampleDataTable } from "@/components/tables/sample-data-table"
 import { SummaryCard } from "@/components/summaries/summary-card"
 import { Button } from "@/components/ui/button"
@@ -6,18 +7,17 @@ import { DownloadCloud, RefreshCw } from "lucide-react"
 export default function LiveReportsPage() {
   return (
     <div className="space-y-6">
-      <div className="flex flex-col space-y-2 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground">LiveReports</h1>
-        <div className="flex space-x-2">
-          <Button variant="outline">
-            <RefreshCw className="mr-2 h-4 w-4" />
-            Refresh Data
-          </Button>
-          <Button>
-            <DownloadCloud className="mr-2 h-4 w-4" />
-            Export All
-          </Button>
-        </div>
+      <div className="flex flex-col items-start space-y-2 sm:flex-row sm:items-center sm:justify-end sm:space-y-0 sm:space-x-2">
+        {/* Title moved to DashboardHeader */}
+        {/* Buttons moved to the right */}
+        <Button variant="outline">
+          <RefreshCw className="mr-2 h-4 w-4" />
+          Refresh Data
+        </Button>
+        <Button>
+          <DownloadCloud className="mr-2 h-4 w-4" />
+          Export All
+        </Button>
       </div>
       
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

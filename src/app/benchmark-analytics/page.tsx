@@ -1,3 +1,4 @@
+
 import { SampleLineChart } from "@/components/charts/sample-line-chart"
 import { SampleDataTable } from "@/components/tables/sample-data-table"
 import { SummaryCard } from "@/components/summaries/summary-card"
@@ -5,7 +6,7 @@ import { SummaryCard } from "@/components/summaries/summary-card"
 export default function BenchmarkAnalyticsPage() {
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold tracking-tight text-foreground">Benchmark Analytics</h1>
+      {/* <h1 className="text-3xl font-bold tracking-tight text-foreground">Benchmark Analytics</h1> */}
       
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <SummaryCard 

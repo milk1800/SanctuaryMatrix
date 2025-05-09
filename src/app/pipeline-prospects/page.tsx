@@ -1,3 +1,4 @@
+
 import { SampleDataTable } from "@/components/tables/sample-data-table"
 import { SummaryCard } from "@/components/summaries/summary-card"
 import { SampleBarChart } from "@/components/charts/sample-bar-chart"
@@ -5,7 +6,7 @@ import { SampleBarChart } from "@/components/charts/sample-bar-chart"
 export default function PipelineProspectsPage() {
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold tracking-tight text-foreground">Pipeline & Prospects</h1>
+      {/* <h1 className="text-3xl font-bold tracking-tight text-foreground">Pipeline & Prospects</h1> */}
       
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <SummaryCard 

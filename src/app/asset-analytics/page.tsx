@@ -23,7 +23,7 @@ export default function AssetAnalyticsPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl font-bold tracking-tight text-foreground">Asset Analytics</h1>
+      {/* Title removed from here, will be in DashboardHeader */}
       
       <Card className="p-4 shadow-lg">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -104,7 +104,7 @@ export default function AssetAnalyticsPage() {
           trendColor="text-green-600 dark:text-green-400"
         />
         
-        {/* Row 3: Portfolio Health & Client Liquidity (formerly Client Base Composition & Portfolio Health) */}
+        {/* Row 3: Portfolio Health & Client Liquidity */}
         <SummaryCard 
           title="Average Asset Age" 
           value="3.2 Years" 
@@ -113,7 +113,7 @@ export default function AssetAnalyticsPage() {
         <SummaryCard 
           title="Number of Holdings" 
           value="128" 
-          iconName={"Archive" as IconName}
+          iconName={"Archive" as IconName} // Consider changing to Layers or List if more appropriate
         />
         <SummaryCard
           title="Cash Allocation %" 
