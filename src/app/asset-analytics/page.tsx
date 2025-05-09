@@ -59,7 +59,7 @@ export default function AssetAnalyticsPage() {
         </div>
       </Card>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <div className="space-y-6"> {/* Stacked Inflows and Outflows */}
           <SummaryCard
             title="Inflows (MTD)"
@@ -142,3 +142,4 @@ export default function AssetAnalyticsPage() {
     </div>
   )
 }
+
