@@ -60,53 +60,7 @@ export default function AssetAnalyticsPage() {
       </Card>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div className="space-y-6"> {/* Stacked Inflows and Outflows */}
-          <SummaryCard
-            title="Inflows (MTD)"
-            value="$500,000"
-            iconName={"ArrowDownCircle" as IconName}
-            trend="+10% vs last month"
-            trendColor="text-green-600 dark:text-green-400"
-          />
-          <SummaryCard
-            title="Outflows (MTD)"
-            value="$200,000"
-            iconName={"ArrowUpCircle" as IconName}
-            trend="+5% vs last month" 
-            trendColor="text-red-600 dark:text-red-400"
-          />
-        </div>
-        <div className="space-y-6"> {/* Stacked Net Flows and % Accounts in Model Portfolios */}
-          <SummaryCard
-            title="Net Flows (MTD)"
-            value="$300,000"
-            iconName={"TrendingUp" as IconName} 
-            trend="+$50k vs last month"
-            trendColor="text-green-600 dark:text-green-400"
-          />
-          <SummaryCard
-            title="% of Accounts in Model Portfolios"
-            value="65%"
-            iconName={"PieChart" as IconName}
-          />
-        </div>
-        <div className="space-y-6"> {/* Stacked # of Households and Cash Allocation */}
-          <SummaryCard
-            title="# of Households"
-            value="150"
-            iconName={"Users" as IconName}
-          />
-          <SummaryCard
-            title="Cash Allocation"
-            value="10%" 
-            iconName={"Percent" as IconName}
-          />
-        </div>
-        <SummaryCard
-          title="# of Accounts"
-          value="320"
-          iconName={"List" as IconName}
-        />
+        {/* Row 1: Core Performance Metrics */}
         <SummaryCard 
           title="Total Assets Under Management" 
           value="$12,345,678" 
@@ -121,15 +75,68 @@ export default function AssetAnalyticsPage() {
           trend="-0.5% from last quarter"
           trendColor="text-red-600 dark:text-red-400"
         />
+        <SummaryCard
+          title="% of Accounts in Model Portfolios"
+          value="65%"
+          iconName={"PieChart" as IconName}
+        />
+
+        {/* Row 2: Flow Activity */}
+        <SummaryCard
+          title="Inflows (MTD)"
+          value="$500,000"
+          iconName={"ArrowDownCircle" as IconName}
+          trend="+10% vs last month"
+          trendColor="text-green-600 dark:text-green-400"
+        />
+        <SummaryCard
+          title="Outflows (MTD)"
+          value="$200,000"
+          iconName={"ArrowUpCircle" as IconName}
+          trend="+5% vs last month" 
+          trendColor="text-red-600 dark:text-red-400"
+        />
+        <SummaryCard
+          title="Net Flows (MTD)"
+          value="$300,000"
+          iconName={"TrendingUp" as IconName} 
+          trend="+$50k vs last month"
+          trendColor="text-green-600 dark:text-green-400"
+        />
+        
+        {/* Row 3: Client Base Composition */}
+        <SummaryCard
+          title="# of Households"
+          value="150"
+          iconName={"Users" as IconName}
+        />
+        <SummaryCard
+          title="# of Accounts"
+          value="320"
+          iconName={"List" as IconName}
+        />
+        <SummaryCard
+          title="Cash Allocation %" 
+          value="10%" 
+          iconName={"Percent" as IconName}
+        />
+
+        {/* Row 4: Portfolio Health & Depth */}
+        <SummaryCard 
+          title="Average Asset Age" 
+          value="3.2 Years" 
+          iconName={"Activity" as IconName}
+        />
         <SummaryCard 
           title="Number of Holdings" 
           value="128" 
           iconName={"Archive" as IconName}
         />
-        <SummaryCard 
-          title="Average Asset Age" 
-          value="3.2 Years" 
-          iconName={"Activity" as IconName}
+        <SummaryCard
+          title="Top Asset Class"
+          value="U.S. Equity – 42%"
+          iconName={"Layers" as IconName}
+          description="Largest allocation by asset type"
         />
       </div>
 
@@ -142,4 +149,3 @@ export default function AssetAnalyticsPage() {
     </div>
   )
 }
-

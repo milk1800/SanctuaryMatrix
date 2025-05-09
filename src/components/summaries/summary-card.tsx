@@ -19,7 +19,8 @@ import {
   List, 
   ArrowDownCircle, 
   ArrowUpCircle,
-  PieChart, // Added PieChart icon
+  PieChart, 
+  Layers, // Added Layers icon
   type LucideIcon 
 } from "lucide-react"
 
@@ -41,7 +42,8 @@ const iconComponentsMap: Record<string, LucideIcon> = {
   List,
   ArrowDownCircle,
   ArrowUpCircle,
-  PieChart, // Added PieChart to map
+  PieChart,
+  Layers, // Added Layers to map
 };
 
 export type IconName = keyof typeof iconComponentsMap;
