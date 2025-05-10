@@ -28,7 +28,7 @@ export function SampleDataTable({ title, description }: SampleDataTableProps) {
   return (
     <Card className="shadow-lg col-span-1 md:col-span-2 backdrop-blur-sm bg-card/80">
       <CardHeader>
-        <CardTitle className="text-gradient text-glow-primary">{title}</CardTitle>
+        <CardTitle className="text-gradient text-glow-primary text-xl">{title}</CardTitle> {/* Increased font size */}
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
