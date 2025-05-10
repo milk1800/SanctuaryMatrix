@@ -9,7 +9,7 @@
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit/zod';
+import {z} from 'zod'; // Changed from 'genkit/zod'
 
 const MatrixAiChatInputSchema = z.object({
   query: z.string().describe('The user query.'),
@@ -83,3 +83,4 @@ const matrixAiFlow = ai.defineFlow(
     return output;
   }
 );
+
