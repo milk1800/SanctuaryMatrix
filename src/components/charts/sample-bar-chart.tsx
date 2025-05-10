@@ -18,19 +18,19 @@ const chartData = [
 const chartConfig = {
   Equity: {
     label: "Equity",
-    color: "hsl(var(--chart-1))", // Cyan
+    color: "hsl(var(--chart-1))", // Teal
   },
   "Fixed Income": {
     label: "Fixed Income",
-    color: "hsl(var(--chart-2))", // Purple
+    color: "hsl(var(--chart-2))", // Blue
   },
   Alternatives: {
     label: "Alternatives",
-    color: "hsl(var(--chart-3))", // Pink
+    color: "hsl(var(--chart-3))", // Violet
   },
   Cash: {
     label: "Cash",
-    color: "hsl(var(--chart-4))", // Lighter Cyan
+    color: "hsl(var(--chart-4))", // Lighter Teal
   },
 } satisfies ChartConfig;
 
@@ -49,7 +49,7 @@ export function SampleBarChart({ title, description }: SampleBarChartProps) {
       <CardContent>
         <ChartContainer config={chartConfig} className="h-[300px] w-full">
           <BarChart data={chartData} accessibilityLayer>
-            <CartesianGrid vertical={false} strokeDasharray="3 3" strokeOpacity={0.5} />
+            <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="hsl(var(--muted-foreground))" strokeOpacity={0.3} />
             <XAxis
               dataKey="category" 
               tickLine={false}

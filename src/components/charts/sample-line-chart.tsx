@@ -17,11 +17,11 @@ const chartData = [
 const chartConfig = {
   value1: {
     label: "Series A",
-    color: "hsl(var(--chart-1))", // Cyan
+    color: "hsl(var(--chart-1))", // Teal
   },
   value2: {
     label: "Series B",
-    color: "hsl(var(--chart-2))", // Purple
+    color: "hsl(var(--chart-2))", // Blue
   },
 } satisfies ChartConfig;
 
@@ -40,7 +40,7 @@ export function SampleLineChart({ title, description }: SampleLineChartProps) {
       <CardContent>
         <ChartContainer config={chartConfig} className="h-[300px] w-full">
           <LineChart data={chartData} accessibilityLayer>
-            <CartesianGrid vertical={false} strokeDasharray="3 3" strokeOpacity={0.5}/>
+            <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="hsl(var(--muted-foreground))" strokeOpacity={0.3}/>
             <XAxis
               dataKey="date"
               tickLine={false}

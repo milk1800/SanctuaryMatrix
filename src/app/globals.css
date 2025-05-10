@@ -15,21 +15,22 @@
     --popover-foreground: 0 0% 90%;
 
     /* UI Gradient Colors: Teal -> Blue -> Violet */
-    --gradient-1-hsl: 170 70% 45%; /* Teal for UI elements */
-    --gradient-2-hsl: 210 80% 55%; /* Blue for UI elements */
-    --gradient-3-hsl: 260 70% 60%; /* Violet for UI elements */
+    /* Updated to match precise chart colors as per user request */
+    --gradient-1-hsl: 174 100% 48%; /* Teal #00F5D4 */
+    --gradient-2-hsl: 220 100% 61%; /* Blue #3A86FF */
+    --gradient-3-hsl: 267 83% 57%;  /* Violet #8338EC */
 
     --gradient-1: hsl(var(--gradient-1-hsl));
     --gradient-2: hsl(var(--gradient-2-hsl));
     --gradient-3: hsl(var(--gradient-3-hsl));
 
     /* Primary color from the UI gradient (Teal) */
-    --primary-hsl: var(--gradient-1-hsl);
+    --primary-hsl: var(--gradient-1-hsl); /* Teal #00F5D4 */
     --primary: var(--gradient-1);
     --primary-foreground: 0 0% 100%; /* White for text on primary */
 
     /* Accent color from the UI gradient (Violet) */
-    --accent-hsl: var(--gradient-3-hsl);
+    --accent-hsl: var(--gradient-3-hsl); /* Violet #8338EC */
     --accent: var(--gradient-3);
     --accent-foreground: 0 0% 100%; /* White for text on accent */
     
@@ -86,6 +87,7 @@
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 90%;
 
+    /* Primary and Accent colors use the updated gradient HSL vars */
     --primary: hsl(var(--primary-hsl));
     --primary-foreground: 0 0% 100%; 
 
@@ -103,7 +105,7 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 15%;
-    --ring: hsl(var(--primary-hsl));
+    --ring: hsl(var(--primary-hsl)); /* Teal */
     
     --header-foreground: 0 0% 90%;
 
