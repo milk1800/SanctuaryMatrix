@@ -33,13 +33,13 @@
     --radius: 0.5rem;
 
     /* Sidebar specific colors from existing theme, adjusted for new palette */
-    --sidebar-background: 240 50% 20%; /* Dark Navy Blue */
+    --sidebar-background: 240 60% 15%; /* Even Darker Navy Blue */
     --sidebar-foreground: 220 15% 95%; /* Light cool gray for text on navy */
     --sidebar-primary: 180 100% 25.1%; /* Teal - for active item text color */
     --sidebar-primary-foreground: 0 0% 100%; /* White - for active item text on primary bg (not directly used in current setup) */
-    --sidebar-accent: 220 15% 30%; /* Slightly lighter navy for hover states on sidebar */
+    --sidebar-accent: 240 55% 25%; /* Darker Navy accent for hover states on sidebar */
     --sidebar-accent-foreground: 180 90% 65%; /* Brighter Teal text on hover */
-    --sidebar-border: 240 50% 30%; /* Slightly lighter navy for internal borders */
+    --sidebar-border: 240 55% 22%; /* Darker Navy for internal borders */
     --sidebar-ring: 180 100% 35%; /* Brighter Teal for focus rings on sidebar items */
   }
   .dark {
