@@ -20,18 +20,17 @@ const pageTitles: Record<string, string> = {
 export function DashboardHeader() {
   const pathname = usePathname()
   const currentTitle = pageTitles[pathname] || "Sanctuary Matrix" // Default title if path not found
-  const isAssetAnalyticsPage = pathname === "/asset-analytics";
 
   return (
     <header className={cn(
       "sticky top-0 z-10 flex items-center justify-between border-b bg-background/80 px-4 backdrop-blur sm:px-6",
-      isAssetAnalyticsPage ? "h-24" : "h-16" // Conditional header height
+      "h-20" // Consistent header height for all pages
     )}>
       <div className="flex items-center gap-2">
         <SidebarTrigger className="md:hidden" />
         <h1 className={cn(
           "font-bold text-gradient text-glow-primary",
-          isAssetAnalyticsPage ? "text-5xl" : "text-2xl" // Conditional font size
+          "text-4xl" // Consistent large font size for all page titles
         )}>{currentTitle}</h1>
       </div>
       <div className="flex items-center gap-4">
