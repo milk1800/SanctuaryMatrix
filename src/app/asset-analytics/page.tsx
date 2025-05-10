@@ -109,7 +109,7 @@ export default function AssetAnalyticsPage() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <SampleBarChart title="Asset Allocation by Type" description="Distribution of assets across different categories." />
-        <SampleLineChart title="Book of Business Performance over time" description="Growth of a $10,000 investment." />
+        <SampleLineChart title="Book of Business Performance" description="Growth of a $10,000 investment." />
       </div>
       
       <SampleDataTable title="Top Performing Assets" description="Assets with the highest returns year-to-date." />
