@@ -4,67 +4,7 @@
 
 @layer base {
   :root {
-    /* Light Theme Variables */
-    --background: 0 0% 98%; /* Very Light Gray / Almost White */
-    --foreground: 0 0% 10%; /* Dark Gray for text */
-
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 0 0% 10%;
-
-    --popover: 0 0% 100%; /* White */
-    --popover-foreground: 0 0% 10%;
-
-    /* Primary will be Cyan from the gradient for general accents */
-    --primary: 180 100% 50%; /* Cyan: #00f0ff */
-    --primary-foreground: 0 0% 100%; /* White for text on primary/gradient */
-
-    /* Accent will be Purple from the gradient */
-    --accent: 271 76% 53%; /* Electric Purple: #8a2be2 */
-    --accent-foreground: 0 0% 100%; /* White */
-    
-    --secondary: 0 0% 92%; /* Light Gray */
-    --secondary-foreground: 0 0% 20%; /* Dark Gray */
-
-    --muted: 0 0% 95%; /* Very Light Gray for muted elements */
-    --muted-foreground: 0 0% 45%; /* Medium Gray for muted text */
-
-    --destructive: 0 84.2% 60.2%; /* Keep vibrant red */
-    --destructive-foreground: 0 0% 98%; /* Light text for destructive */
-
-    --border: 0 0% 85%; /* Light Gray for borders */
-    --input: 0 0% 97%; /* Off-white for input backgrounds */
-    --ring: 180 100% 50%; /* Cyan for focus rings */
-    
-    /* Specific gradient colors */
-    --gradient-cyan: 180 100% 50%;
-    --gradient-purple: 271 76% 53%;
-    --gradient-pink: 300 100% 50%;
-
-    /* Header foreground will be handled by text-gradient typically */
-    --header-foreground: 0 0% 10%; /* Default to dark gray if not gradient */
-
-    /* Chart colors from the gradient palette */
-    --chart-1: 180 100% 50%;  /* Cyan */
-    --chart-2: 271 76% 53%;  /* Purple */
-    --chart-3: 300 100% 50%;  /* Pink */
-    --chart-4: 195 100% 60%;  /* Lighter/variant Cyan */
-    --chart-5: 280 80% 65%;   /* Lighter/variant Purple */
-    
-    --radius: 0.5rem;
-
-    /* Sidebar specific colors for LIGHT mode */
-    --sidebar-background: 220 20% 97%; /* Light Cool Gray */
-    --sidebar-foreground: 0 0% 20%; /* Dark Gray for text */
-    --sidebar-primary: 180 100% 50%; /* Cyan for specific highlights */
-    --sidebar-primary-foreground: 0 0% 100%; /* White */
-    --sidebar-accent: 180 100% 50% / 0.1; /* Subtle transparent cyan for hover */
-    --sidebar-accent-foreground: 180 100% 50%; /* Cyan for text on hover */
-    --sidebar-border: 0 0% 85%; /* Light Gray border */
-    --sidebar-ring: 180 100% 50%; /* Cyan for focus ring */
-  }
-
-  /* Dark theme variables */
-  .dark {
+    /* Theme: Dark aesthetic for both light and dark mode selections */
     --background: 0 0% 2%; /* Near Black */
     --foreground: 0 0% 90%; /* Light Gray for text */
 
@@ -74,42 +14,104 @@
     --popover: 0 0% 5%; /* Very Dark Gray */
     --popover-foreground: 0 0% 90%;
 
-    --primary: 180 100% 50%; 
-    --primary-foreground: 0 0% 100%; 
+    /* New Gradient Colors: Teal -> Blue -> Violet */
+    --gradient-1-hsl: 170 70% 45%; /* Teal */
+    --gradient-2-hsl: 210 80% 55%; /* Blue */
+    --gradient-3-hsl: 260 70% 60%; /* Violet */
 
-    --accent: 271 76% 53%; 
-    --accent-foreground: 0 0% 100%; 
+    --gradient-1: hsl(var(--gradient-1-hsl));
+    --gradient-2: hsl(var(--gradient-2-hsl));
+    --gradient-3: hsl(var(--gradient-3-hsl));
+
+    /* Primary color from the gradient (Teal) */
+    --primary-hsl: var(--gradient-1-hsl);
+    --primary: var(--gradient-1);
+    --primary-foreground: 0 0% 100%; /* White for text on primary */
+
+    /* Accent color from the gradient (Violet) */
+    --accent-hsl: var(--gradient-3-hsl);
+    --accent: var(--gradient-3);
+    --accent-foreground: 0 0% 100%; /* White for text on accent */
     
     --secondary: 0 0% 15%; /* Darker Gray */
-    --secondary-foreground: 0 0% 80%;
+    --secondary-foreground: 0 0% 80%; /* Lighter gray for text on secondary */
 
     --muted: 0 0% 10%; /* Dark Gray for muted elements */
-    --muted-foreground: 0 0% 60%; /* Lighter Gray for muted text */
+    --muted-foreground: 0 0% 60%; /* Medium Gray for muted text */
 
-    --destructive: 0 70% 50%; /* Adjusted for dark */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%; /* Default Red */
+    --destructive-foreground: 0 0% 98%; /* Light text for destructive */
 
     --border: 0 0% 20%; /* Dark Gray for borders */
     --input: 0 0% 15%; /* Dark Gray for input backgrounds */
-    --ring: 180 100% 50%; 
+    --ring: var(--primary-hsl); /* Teal for focus rings */
+    
+    /* Header foreground will be handled by text-gradient typically */
+    --header-foreground: 0 0% 90%; /* Default to light gray if not gradient */
+
+    /* Chart colors from the new gradient palette */
+    --chart-1: var(--gradient-1);    /* Teal */
+    --chart-2: var(--gradient-2);    /* Blue */
+    --chart-3: var(--gradient-3);    /* Violet */
+    --chart-4: hsl(170 70% 55%);     /* Lighter Teal */
+    --chart-5: hsl(210 80% 65%);     /* Lighter Blue */
+    
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors (will be dark for both themes) */
+    --sidebar-background: 0 0% 3%; /* Very Dark */
+    --sidebar-foreground: 0 0% 85%; /* Light Gray for text */
+    --sidebar-primary: hsl(var(--primary-hsl)); /* Teal */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: hsl(var(--primary-hsl) / 0.1); /* Subtle transparent teal for hover */
+    --sidebar-accent-foreground: hsl(var(--primary-hsl)); /* Teal for text on hover */
+    --sidebar-border: 0 0% 15%; /* Darker border for sidebar */
+    --sidebar-ring: hsl(var(--primary-hsl)); /* Teal for focus ring */
+  }
+
+  /* Dark theme variables (reinforces the dark aesthetic) */
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 90%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: hsl(var(--primary-hsl));
+    --primary-foreground: 0 0% 100%; 
+
+    --accent: hsl(var(--accent-hsl));
+    --accent-foreground: 0 0% 100%; 
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 80%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+
+    --destructive: 0 70% 50%; /* Slightly adjusted red for dark */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: hsl(var(--primary-hsl));
     
     --header-foreground: 0 0% 90%;
 
-    --chart-1: 180 100% 50%;
-    --chart-2: 271 76% 53%;
-    --chart-3: 300 100% 50%;
-    --chart-4: 195 100% 60%;
-    --chart-5: 280 80% 65%;
-
+    /* Chart colors inherit from :root */
+    
     /* Sidebar specific colors for DARK mode */
-    --sidebar-background: 0 0% 3%; /* Very Dark Blue/Almost Black */
-    --sidebar-foreground: 0 0% 85%; /* Light Gray for text */
-    --sidebar-primary: 180 100% 50%; 
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: hsl(var(--primary-hsl)); 
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 100% / 0.05; /* Subtle transparent white for general hover */
-    --sidebar-accent-foreground: 180 100% 50%; /* Cyan for text on hover */
+    --sidebar-accent: hsl(var(--primary-hsl) / 0.1); /* Subtle transparent teal */
+    --sidebar-accent-foreground: hsl(var(--primary-hsl)); /* Teal for text on hover */
     --sidebar-border: 0 0% 15%; 
-    --sidebar-ring: 180 100% 50%; 
+    --sidebar-ring: hsl(var(--primary-hsl)); 
   }
 }
 
@@ -124,35 +126,35 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-gradient-cyan via-gradient-purple to-gradient-pink bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-gradient-1 via-gradient-2 to-gradient-3 bg-clip-text text-transparent;
   }
-  .text-glow-primary { /* Glow with primary color (cyan) */
-    text-shadow: 0 0 6px hsl(var(--primary));
+  .text-glow-primary { /* Glow with primary color (teal) */
+    text-shadow: 0 0 6px hsl(var(--primary-hsl));
   }
-  .icon-glow-primary { /* Glow for icons with primary color (cyan) */
-    filter: drop-shadow(0 0 4px hsl(var(--primary)));
+  .icon-glow-primary { /* Glow for icons with primary color (teal) */
+    filter: drop-shadow(0 0 4px hsl(var(--primary-hsl)));
   }
   .element-glow-primary { /* Box shadow glow for elements */
-     box-shadow: 0 0 8px 2px hsl(var(--primary) / 0.7);
+     box-shadow: 0 0 8px 2px hsl(var(--primary-hsl) / 0.7);
   }
 
-  .fab-glow { /* Updated FAB glow to use primary (cyan) */
-    box-shadow: 0 0 8px 2px hsl(var(--primary)), 0 0 12px 4px hsla(var(--primary), 0.6);
+  .fab-glow { /* Updated FAB glow to use primary (teal) */
+    box-shadow: 0 0 8px 2px hsl(var(--primary-hsl)), 0 0 12px 4px hsla(var(--primary-hsl), 0.6);
     animation: fab-pulse 2.5s infinite ease-in-out;
   }
 
   @keyframes fab-pulse {
     0% {
       transform: scale(1);
-      box-shadow: 0 0 8px 2px hsl(var(--primary)), 0 0 12px 4px hsla(var(--primary), 0.6);
+      box-shadow: 0 0 8px 2px hsl(var(--primary-hsl)), 0 0 12px 4px hsla(var(--primary-hsl), 0.6);
     }
     50% {
       transform: scale(1.05);
-      box-shadow: 0 0 12px 4px hsl(var(--primary)), 0 0 18px 6px hsla(var(--primary), 0.5);
+      box-shadow: 0 0 12px 4px hsl(var(--primary-hsl)), 0 0 18px 6px hsla(var(--primary-hsl), 0.5);
     }
     100% {
       transform: scale(1);
-      box-shadow: 0 0 8px 2px hsl(var(--primary)), 0 0 12px 4px hsla(var(--primary), 0.6);
+      box-shadow: 0 0 8px 2px hsl(var(--primary-hsl)), 0 0 12px 4px hsla(var(--primary-hsl), 0.6);
     }
   }
 }

@@ -10,11 +10,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-gradient-cyan via-gradient-purple to-gradient-pink text-primary-foreground hover:brightness-90 rounded-xl shadow-md hover:shadow-lg", // Gradient background, white text, hover effect
+        default: "bg-gradient-to-r from-gradient-1 via-gradient-2 to-gradient-3 text-primary-foreground hover:brightness-90 rounded-xl shadow-md hover:shadow-lg", // Updated gradient
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md", 
         outline:
-          "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground rounded-md", // Transparent bg for outline
+          "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground rounded-md", 
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md",
         ghost: "hover:bg-accent hover:text-accent-foreground rounded-md",
@@ -24,7 +24,7 @@ const buttonVariants = cva(
         default: "h-10 px-4 py-2",
         sm: "h-9 px-3", 
         lg: "h-11 px-8", 
-        icon: "h-10 w-10 rounded-full", // Changed icon to rounded-full for consistency with FAB
+        icon: "h-10 w-10 rounded-full", 
       },
     },
     defaultVariants: {

@@ -50,8 +50,8 @@ export function AppSidebarContent() {
                     className={cn(
                       "justify-start text-sidebar-foreground",
                        isActive
-                        ? "bg-gradient-to-r from-gradient-cyan via-gradient-purple to-gradient-pink text-primary-foreground" 
-                        : "hover:bg-gradient-to-r hover:from-gradient-cyan/70 hover:via-gradient-purple/70 hover:to-gradient-pink/70 hover:text-primary-foreground"
+                        ? "bg-gradient-to-r from-gradient-1 via-gradient-2 to-gradient-3 text-primary-foreground" 
+                        : "hover:bg-gradient-to-r hover:from-gradient-1/70 hover:via-gradient-2/70 hover:to-gradient-3/70 hover:text-primary-foreground"
                     )}
                   >
                     <a> 

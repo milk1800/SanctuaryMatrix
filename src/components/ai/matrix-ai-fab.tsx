@@ -14,16 +14,16 @@ export function MatrixAiFab({ onClick, className }: MatrixAiFabProps) {
   return (
     <Button
       onClick={onClick}
-      variant="default" // Ensures gradient if default button has gradient
+      variant="default" 
       className={cn(
-        "fixed bottom-8 right-8 z-50 h-16 w-16 rounded-full shadow-xl fab-glow", // fab-glow uses --primary (cyan)
-        "flex items-center justify-center bg-gradient-to-r from-gradient-cyan via-gradient-purple to-gradient-pink text-primary-foreground", // Explicit gradient and text color
+        "fixed bottom-8 right-8 z-50 h-16 w-16 rounded-full shadow-xl fab-glow", 
+        "flex items-center justify-center bg-gradient-to-r from-gradient-1 via-gradient-2 to-gradient-3 text-primary-foreground", // Updated gradient
         className
       )}
       aria-label="Open Matrix AI Assistant"
       size="icon"
     >
-      <Bot className="h-8 w-8" /> {/* Icon will inherit text-primary-foreground (white) */}
+      <Bot className="h-8 w-8" /> 
     </Button>
   );
 }

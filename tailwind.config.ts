@@ -10,13 +10,14 @@ export default {
   theme: {
   	extend: {
       fontFamily: {
-        sans: ['var(--font-sansita)'], // Reverted to Sansita as per previous instructions; will be Geist eventually
+        sans: ['var(--font-sansita)'], 
       },
   		colors: {
-        // Direct hex values for use in Tailwind gradient classes
-        'gradient-cyan': '#00f0ff',
-        'gradient-purple': '#8a2be2',
-        'gradient-pink': '#ff00ff',
+        // New gradient colors for use in Tailwind `from-gradient-1` etc.
+        // These directly reference the HSL values defined in globals.css for consistency
+        'gradient-1': 'hsl(var(--gradient-1-hsl))', // Teal
+        'gradient-2': 'hsl(var(--gradient-2-hsl))', // Blue
+        'gradient-3': 'hsl(var(--gradient-3-hsl))', // Violet
 
         // CSS variable based colors
   			background: 'hsl(var(--background))',
