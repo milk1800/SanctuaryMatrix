@@ -110,19 +110,12 @@ export default function PortfolioMatrixPage() {
 
       {!isLoading && !analysisResult && (
          <>
-          {/* Portfolio Filters & Search section removed */}
-
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <SummaryCard
               title="Total Portfolios"
               value="75"
               iconName={"LayoutGrid" as IconName}
               description="Number of distinct portfolios managed"
-            />
-            <SummaryCard
-              title="Avg. Holdings per Portfolio"
-              value="22"
-              iconName={"List" as IconName}
             />
             <SummaryCard
               title="Overall Model Adherence"
@@ -151,3 +144,4 @@ export default function PortfolioMatrixPage() {
     </div>
   );
 }
+
