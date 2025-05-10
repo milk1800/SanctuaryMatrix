@@ -1,3 +1,4 @@
+
 "use client"
 
 import Link from "next/link"
@@ -54,7 +55,7 @@ export function AppSidebarContent() {
                 >
                   <a> {/* <a> tag needed when asChild is true for Link component */}
                     <item.icon className="h-5 w-5" />
-                    <span className="group-data-[collapsible=icon]:hidden">{item.label}</span>
+                    <span className="group-data-[collapsible=icon]:hidden text-base">{item.label}</span> {/* Increased font size here */}
                   </a>
                 </SidebarMenuButton>
               </Link>
@@ -65,3 +66,4 @@ export function AppSidebarContent() {
     </>
   )
 }
+
