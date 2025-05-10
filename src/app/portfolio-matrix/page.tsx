@@ -126,7 +126,8 @@ export default function PortfolioMatrixPage() {
           
           <SampleDataTable 
             title="Portfolio Matrix Overview" 
-            description="Detailed view of all managed portfolios, their compositions, and performance metrics." 
+            description="Detailed view of all managed portfolios, their compositions, and performance metrics."
+            idColumnHeader="Ticker" // Pass "Ticker" as the header for the ID column
           />
 
           <Card className="p-4 shadow-lg backdrop-blur-sm bg-card/80">

@@ -1,3 +1,4 @@
+tsx
 "use client"
 
 import {
@@ -23,9 +24,10 @@ const sampleData = [
 interface SampleDataTableProps {
   title: string;
   description?: string;
+  idColumnHeader?: string; // New prop for customizing the ID column header
 }
 
-export function SampleDataTable({ title, description }: SampleDataTableProps) {
+export function SampleDataTable({ title, description, idColumnHeader = "ID" }: SampleDataTableProps) {
   return (
     <Card className="shadow-lg col-span-1 md:col-span-2 backdrop-blur-sm bg-card/80">
       <CardHeader>
@@ -36,7 +38,7 @@ export function SampleDataTable({ title, description }: SampleDataTableProps) {
         <Table className="text-lg"> {/* Changed default text size to large */}
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">ID</TableHead>
+              <TableHead className="w-[100px]">{idColumnHeader}</TableHead> {/* Use the prop here */}
               <TableHead>Name</TableHead>
               <TableHead>Category</TableHead>
               <TableHead>Value</TableHead>
@@ -63,4 +65,3 @@ export function SampleDataTable({ title, description }: SampleDataTableProps) {
     </Card>
   )
 }
-
