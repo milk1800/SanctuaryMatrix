@@ -10,8 +10,7 @@ export default {
   theme: {
   	extend: {
       fontFamily: {
-        sans: ['var(--font-sansita)'], // Changed from --font-geist-sans to --font-sansita
-        // mono: ['var(--font-geist-mono)'], // Removed or can be kept if a mono fallback is desired
+        sans: ['var(--font-sansita)'], 
       },
   		colors: {
   			background: 'hsl(var(--background))',
@@ -47,6 +46,9 @@ export default {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
+  			header: { // Added for header specific text color
+                foreground: 'hsl(var(--header-foreground))'
+            },
   			chart: {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
@@ -68,7 +70,8 @@ export default {
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
+        xl: 'calc(var(--radius) + 4px)' // Added for rounded-xl if needed globally, otherwise apply in component
   		},
   		keyframes: {
   			'accordion-down': {

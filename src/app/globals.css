@@ -11,21 +11,23 @@
     --card-foreground: 220 10% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 10% 20%;
-    --primary: 194 100% 50%; /* NEW: Bright Cyan/Sky Blue from #00C2FF */
-    --primary-foreground: 220 10% 10%; /* NEW: Dark cool gray for text on bright cyan primary */
+    --primary: 21 83% 50%; /* UPDATED: Deep Orange from #EA580C */
+    --primary-foreground: 0 0% 100%; /* UPDATED: White for text on Deep Orange */
     --secondary: 220 15% 90%; /* Light cool gray */
     --secondary-foreground: 220 10% 20%;
     --muted: 220 15% 90%; /* Same as secondary for muted backgrounds */
     --muted-foreground: 220 10% 45%; /* Slightly lighter cool gray for muted text */
-    --accent: 194 100% 50%; /* NEW: Bright Cyan/Sky Blue from #00C2FF */
-    --accent-foreground: 220 10% 10%; /* NEW: Dark cool gray for text on bright cyan accent */
+    --accent: 21 83% 50%; /* UPDATED: Deep Orange, same as primary */
+    --accent-foreground: 0 0% 100%; /* UPDATED: White, same as primary-foreground */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 15% 88%;
     --input: 220 15% 88%;
-    --ring: 194 100% 50%; /* NEW: Bright Cyan/Sky Blue for focus rings */
+    --ring: 21 83% 50%; /* UPDATED: Deep Orange for focus rings */
     
-    --chart-1: 194 100% 50%; /* NEW: Bright Cyan/Sky Blue from #00C2FF */
+    --header-foreground: 262 68% 42%; /* NEW: Royal Purple from #5B21B6 for header text */
+
+    --chart-1: 194 100% 50%; /* Kept old primary as chart color for now */
     --chart-2: 200 58% 39%;
     --chart-3: 220 37% 24%;
     --chart-4: 170 74% 66%;
@@ -34,14 +36,16 @@
     --radius: 0.5rem;
 
     /* Sidebar specific colors for LIGHT mode */
-    --sidebar-background: 211 53% 11%; /* NEW: Dark Navy Blue from #0D1B2A */
+    --sidebar-background: 211 53% 11%; /* Dark Navy Blue from #0D1B2A */
     --sidebar-foreground: 220 15% 95%; /* Light cool gray for text on navy */
-    --sidebar-primary: 194 100% 50%; /* NEW: Bright Cyan for active item text color (used by app-sidebar-content) */
-    --sidebar-primary-foreground: 220 10% 10%; /* NEW: Dark cool gray for text on --sidebar-primary if it were a background */
-    --sidebar-accent: 211 45% 18%; /* NEW: Slightly lighter Navy for hover/active item background */
-    --sidebar-accent-foreground: 194 100% 50%; /* NEW: Bright Cyan for active/hover item text */
-    --sidebar-border: 211 40% 22%; /* NEW: Slightly lighter Navy for internal borders in sidebar */
-    --sidebar-ring: 194 100% 50%; /* NEW: Bright Cyan for focus rings on sidebar items */
+    /* --sidebar-primary was old primary, now uses main primary which is orange. If specific sidebar accent needed, redefine here */
+    --sidebar-primary: 21 83% 50%; /* UPDATED to new primary for consistency if used */
+    --sidebar-primary-foreground: 0 0% 100%; /* UPDATED to new primary-foreground */
+    --sidebar-accent: 211 45% 18%; /* Slightly lighter Navy for hover/active item background */
+    /* --sidebar-accent-foreground was old primary. Let's use a contrasting color for sidebar accent text if needed, or new primary. */
+    --sidebar-accent-foreground: 21 83% 50%; /* Bright Orange text on dark navy hover */
+    --sidebar-border: 211 40% 22%; /* Slightly lighter Navy for internal borders in sidebar */
+    --sidebar-ring: 21 83% 50%; /* UPDATED: Deep Orange for focus rings on sidebar items */
   }
   .dark {
     --background: 220 15% 10%; /* Very dark cool gray */
@@ -50,35 +54,37 @@
     --card-foreground: 220 10% 80%;
     --popover: 220 15% 10%;
     --popover-foreground: 220 10% 80%;
-    --primary: 194 100% 50%; /* NEW: Bright Cyan/Sky Blue from #00C2FF */
-    --primary-foreground: 220 10% 10%; /* NEW: Dark cool gray */
+    --primary: 21 83% 50%; /* UPDATED: Deep Orange */
+    --primary-foreground: 0 0% 100%; /* UPDATED: White */
     --secondary: 220 15% 20%; /* Dark cool gray */
     --secondary-foreground: 220 10% 80%;
     --muted: 220 15% 20%;
     --muted-foreground: 220 10% 60%;
-    --accent: 194 100% 50%; /* NEW: Bright Cyan/Sky Blue from #00C2FF */
-    --accent-foreground: 220 10% 10%; /* NEW: Dark cool gray */
+    --accent: 21 83% 50%; /* UPDATED: Deep Orange */
+    --accent-foreground: 0 0% 100%; /* UPDATED: White */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 15% 25%;
     --input: 220 15% 25%;
-    --ring: 194 100% 50%; /* NEW: Bright Cyan/Sky Blue */
+    --ring: 21 83% 50%; /* UPDATED: Deep Orange */
+    
+    --header-foreground: 262 68% 42%; /* NEW: Royal Purple for header text */
 
-    --chart-1: 194 100% 50%; /* NEW: Bright Cyan/Sky Blue */
+    --chart-1: 194 100% 50%; 
     --chart-2: 200 60% 45%;
     --chart-3: 220 80% 55%;
     --chart-4: 170 65% 60%;
     --chart-5: 190 75% 55%;
 
     /* Sidebar specific colors for DARK mode */
-    --sidebar-background: 220 15% 12%; /* Existing: Slightly different from main dark bg */
-    --sidebar-foreground: 220 10% 75%; /* Existing */
-    --sidebar-primary: 194 100% 50%; /* NEW: Bright Cyan (used by app-sidebar-content as dark:text-primary) */
-    --sidebar-primary-foreground: 220 10% 10%; /* NEW: Dark cool gray for text on --sidebar-primary if it were a background */
-    --sidebar-accent: 220 15% 18%; /* Existing: Darker hover state background */
-    --sidebar-accent-foreground: 194 100% 50%; /* NEW: Bright Cyan text on hover */
-    --sidebar-border: 220 15% 25%; /* Existing */
-    --sidebar-ring: 194 100% 50%; /* NEW: Bright Cyan */
+    --sidebar-background: 220 15% 12%; 
+    --sidebar-foreground: 220 10% 75%; 
+    --sidebar-primary: 21 83% 50%; /* UPDATED to new primary */
+    --sidebar-primary-foreground: 0 0% 100%; /* UPDATED to new primary-foreground */
+    --sidebar-accent: 220 15% 18%; 
+    --sidebar-accent-foreground: 21 83% 50%; /* UPDATED to new primary for hover text */
+    --sidebar-border: 220 15% 25%; 
+    --sidebar-ring: 21 83% 50%; /* UPDATED: Deep Orange */
   }
 }
 
@@ -88,7 +94,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* font-family rule removed to allow Next.js font and Tailwind to manage it */
   }
 }
 
