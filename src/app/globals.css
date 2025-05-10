@@ -14,21 +14,21 @@
     --popover: 0 0% 5%; /* Very Dark Gray */
     --popover-foreground: 0 0% 90%;
 
-    /* New Gradient Colors: Teal -> Blue -> Violet */
-    --gradient-1-hsl: 170 70% 45%; /* Teal */
-    --gradient-2-hsl: 210 80% 55%; /* Blue */
-    --gradient-3-hsl: 260 70% 60%; /* Violet */
+    /* UI Gradient Colors: Teal -> Blue -> Violet */
+    --gradient-1-hsl: 170 70% 45%; /* Teal for UI elements */
+    --gradient-2-hsl: 210 80% 55%; /* Blue for UI elements */
+    --gradient-3-hsl: 260 70% 60%; /* Violet for UI elements */
 
     --gradient-1: hsl(var(--gradient-1-hsl));
     --gradient-2: hsl(var(--gradient-2-hsl));
     --gradient-3: hsl(var(--gradient-3-hsl));
 
-    /* Primary color from the gradient (Teal) */
+    /* Primary color from the UI gradient (Teal) */
     --primary-hsl: var(--gradient-1-hsl);
     --primary: var(--gradient-1);
     --primary-foreground: 0 0% 100%; /* White for text on primary */
 
-    /* Accent color from the gradient (Violet) */
+    /* Accent color from the UI gradient (Violet) */
     --accent-hsl: var(--gradient-3-hsl);
     --accent: var(--gradient-3);
     --accent-foreground: 0 0% 100%; /* White for text on accent */
@@ -49,12 +49,18 @@
     /* Header foreground will be handled by text-gradient typically */
     --header-foreground: 0 0% 90%; /* Default to light gray if not gradient */
 
-    /* Chart colors from the new gradient palette */
-    --chart-1: var(--gradient-1);    /* Teal */
-    --chart-2: var(--gradient-2);    /* Blue */
-    --chart-3: var(--gradient-3);    /* Violet */
-    --chart-4: hsl(170 70% 55%);     /* Lighter Teal */
-    --chart-5: hsl(210 80% 65%);     /* Lighter Blue */
+    /* Chart colors from the new specified gradient palette */
+    --chart-teal-hsl: 174 100% 48%;   /* Teal #00F5D4 */
+    --chart-blue-hsl: 220 100% 61%;   /* Blue #3A86FF */
+    --chart-violet-hsl: 267 83% 57%;  /* Violet #8338EC */
+    --chart-light-teal-hsl: 174 100% 58%; /* Lighter Teal for variety */
+    --chart-light-blue-hsl: 220 100% 71%;  /* Lighter Blue for variety */
+
+    --chart-1: hsl(var(--chart-teal-hsl));
+    --chart-2: hsl(var(--chart-blue-hsl));
+    --chart-3: hsl(var(--chart-violet-hsl));
+    --chart-4: hsl(var(--chart-light-teal-hsl));
+    --chart-5: hsl(var(--chart-light-blue-hsl));
     
     --radius: 0.5rem;
 
@@ -101,7 +107,7 @@
     
     --header-foreground: 0 0% 90%;
 
-    /* Chart colors inherit from :root */
+    /* Chart colors inherit from :root and are already defined with new palette */
     
     /* Sidebar specific colors for DARK mode */
     --sidebar-background: 0 0% 3%;
