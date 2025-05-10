@@ -1,9 +1,11 @@
+
 "use client"
 
 import type { ReactNode } from "react"
 import { SidebarProvider, Sidebar } from "@/components/ui/sidebar"
 import { AppSidebarContent } from './app-sidebar-content'
 import { DashboardHeader } from './dashboard-header'
+import { MatrixAiAssistant } from "@/components/ai/matrix-ai-assistant" // Added import
 
 interface AppShellProps {
   children: ReactNode
@@ -23,6 +25,7 @@ export function AppShell({ children }: AppShellProps) {
             {children}
           </main>
         </div>
+        <MatrixAiAssistant /> {/* Added Matrix AI Assistant */}
       </div>
     </SidebarProvider>
   )
