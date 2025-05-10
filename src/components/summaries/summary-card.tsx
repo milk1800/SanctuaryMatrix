@@ -59,7 +59,7 @@ interface SummaryCardProps {
   iconName?: IconName
   description?: string
   trend?: string
-  trendColor?: "text-green-500" | "text-red-500" // Adjusted for better visibility on dark bg
+  trendColor?: "text-green-400" | "text-red-400" // Updated to reflect current theme classes
 }
 
 export function SummaryCard({ title, value, iconName, description, trend, trendColor }: SummaryCardProps) {
