@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
 
 const sampleData = [
   { id: "1", name: "Alpha Fund", category: "Equity", value: "S1,250,000", return: "+5.2%", risk: "Medium" },
@@ -32,7 +33,7 @@ export function SampleDataTable({ title, description }: SampleDataTableProps) {
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
-        <Table>
+        <Table className="text-base"> {/* Changed default text size to medium */}
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">ID</TableHead>
@@ -50,7 +51,9 @@ export function SampleDataTable({ title, description }: SampleDataTableProps) {
                 <TableCell>{item.name}</TableCell>
                 <TableCell>{item.category}</TableCell>
                 <TableCell>{item.value}</TableCell>
-                <TableCell className={parseFloat(item.return) > 2 ? "text-green-400" : parseFloat(item.return) < 0 ? "text-red-400" : "text-foreground"}>{item.return}</TableCell>
+                <TableCell className={cn(
+                  parseFloat(item.return) > 2 ? "text-green-400" : parseFloat(item.return) < 0 ? "text-red-400" : "text-foreground"
+                )}>{item.return}</TableCell>
                 <TableCell className="text-right">{item.risk}</TableCell>
               </TableRow>
             ))}
@@ -60,3 +63,4 @@ export function SampleDataTable({ title, description }: SampleDataTableProps) {
     </Card>
   )
 }
+
