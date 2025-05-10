@@ -149,8 +149,8 @@ export function MatrixAiPanel({ isOpen, onOpenChange, currentTabName }: MatrixAi
                   message.type === 'error' && 'bg-destructive text-destructive-foreground'
                 )}
               >
-                <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-                <p className="text-xs text-muted-foreground/70 mt-1 text-right">
+                <p className="text-lg whitespace-pre-wrap">{message.content}</p> {/* Changed from text-sm to text-lg */}
+                <p className="text-sm text-muted-foreground/70 mt-1 text-right"> {/* Changed from text-xs to text-sm */}
                   {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </p>
               </div>

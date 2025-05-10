@@ -63,15 +63,15 @@ export function SummaryCard({ title, value, iconName, description, trend, trendC
   return (
     <Card className="shadow-lg backdrop-blur-sm bg-card/80">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium text-muted-foreground">
+        <CardTitle className="text-lg font-medium text-muted-foreground"> {/* Changed from text-sm to text-lg */}
           {title}
         </CardTitle>
         {IconComponent && <IconComponent className={cn("h-5 w-5 text-primary icon-glow-primary")} />}
       </CardHeader>
       <CardContent>
         <div className="text-3xl font-bold text-foreground">{value}</div>
-        {description && <p className="text-xs text-muted-foreground pt-1">{description}</p>}
-        {trend && <p className={`text-xs ${trendColor || 'text-muted-foreground'} pt-1`}>{trend}</p>}
+        {description && <p className="text-sm text-muted-foreground pt-1">{description}</p>} {/* Changed from text-xs to text-sm */}
+        {trend && <p className={`text-sm ${trendColor || 'text-muted-foreground'} pt-1`}>{trend}</p>} {/* Changed from text-xs to text-sm */}
       </CardContent>
     </Card>
   )

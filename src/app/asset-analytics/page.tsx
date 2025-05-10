@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { Card, CardTitle } from '@/components/ui/card'; // CardTitle import for potential direct use
+import { Card } from '@/components/ui/card'; 
 
 export default function AssetAnalyticsPage() {
   const [selectedAdvisor, setSelectedAdvisor] = useState<string>("bajorek");
@@ -26,7 +26,7 @@ export default function AssetAnalyticsPage() {
       <Card className="p-4 shadow-lg backdrop-blur-sm bg-card/80">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <Label htmlFor="advisor-filter" className="block text-sm font-medium text-muted-foreground mb-2">
+            <Label htmlFor="advisor-filter" className="block font-medium text-muted-foreground mb-2"> {/* text-lg will come from Label component */}
               Filter by Advisor
             </Label>
             <Select value={selectedAdvisor} onValueChange={setSelectedAdvisor}>
@@ -40,7 +40,7 @@ export default function AssetAnalyticsPage() {
             </Select>
           </div>
           <div>
-            <Label htmlFor="custodian-filter" className="block text-sm font-medium text-muted-foreground mb-2">
+            <Label htmlFor="custodian-filter" className="block font-medium text-muted-foreground mb-2"> {/* text-lg will come from Label component */}
               Filter by Custodian
             </Label>
             <Select value={selectedCustodian} onValueChange={setSelectedCustodian}>

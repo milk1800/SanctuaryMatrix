@@ -33,7 +33,7 @@ export function SampleDataTable({ title, description }: SampleDataTableProps) {
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
-        <Table className="text-base"> {/* Changed default text size to medium */}
+        <Table className="text-lg"> {/* Changed default text size to large */}
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">ID</TableHead>
