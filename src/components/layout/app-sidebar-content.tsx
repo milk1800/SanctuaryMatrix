@@ -55,7 +55,7 @@ export function AppSidebarContent() {
                 >
                   <a> {/* <a> tag needed when asChild is true for Link component */}
                     <item.icon className="h-5 w-5" />
-                    <span className="group-data-[collapsible=icon]:hidden text-base">{item.label}</span> {/* Increased font size here */}
+                    <span className="group-data-[collapsible=icon]:hidden text-lg font-semibold">{item.label}</span> {/* Updated font size and weight */}
                   </a>
                 </SidebarMenuButton>
               </Link>
