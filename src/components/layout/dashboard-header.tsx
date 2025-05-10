@@ -17,7 +17,7 @@ const pageTitles: Record<string, string> = {
 
 export function DashboardHeader() {
   const pathname = usePathname()
-  const currentTitle = pageTitles[pathname] || "Analytics AI" // Default title if path not found
+  const currentTitle = pageTitles[pathname] || "Sanctuary Matrix" // Default title if path not found
 
   return (
     <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b bg-background/80 px-4 backdrop-blur sm:px-6">

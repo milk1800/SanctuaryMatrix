@@ -15,8 +15,8 @@ const sansita = Sansita({ // Changed from geistSans to sansita
 // and the request is to use Sansita generally.
 
 export const metadata: Metadata = {
-  title: 'Analytics AI Dashboard',
-  description: 'Business Analytics for Financial Advisors',
+  title: 'Sanctuary Matrix Dashboard',
+  description: 'Business Analytics for Financial Advisors using Sanctuary Matrix',
 };
 
 export default function RootLayout({

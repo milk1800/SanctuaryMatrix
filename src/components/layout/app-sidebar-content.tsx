@@ -32,7 +32,7 @@ export function AppSidebarContent() {
         <Link href="/" className="flex items-center gap-2">
           <Briefcase className="h-7 w-7 text-primary" /> {/* Uses main primary color, Teal */}
           <h1 className="text-xl font-semibold text-sidebar-foreground group-data-[collapsible=icon]:hidden"> {/* Uses sidebar-foreground (now light gray) */}
-            Analytics AI
+            Sanctuary Matrix
           </h1>
         </Link>
       </SidebarHeader>
