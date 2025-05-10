@@ -4,14 +4,15 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%; /* Near Black */
-    --foreground: 0 0% 90%; /* Light Gray for text */
+    /* Light Theme Variables */
+    --background: 0 0% 98%; /* Very Light Gray / Almost White */
+    --foreground: 0 0% 10%; /* Dark Gray for text */
 
-    --card: 0 0% 8%; /* Dark Gray */
-    --card-foreground: 0 0% 90%;
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 5%; /* Very Dark Gray */
-    --popover-foreground: 0 0% 90%;
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 0 0% 10%;
 
     /* Primary will be Cyan from the gradient for general accents */
     --primary: 180 100% 50%; /* Cyan: #00f0ff */
@@ -21,17 +22,17 @@
     --accent: 271 76% 53%; /* Electric Purple: #8a2be2 */
     --accent-foreground: 0 0% 100%; /* White */
     
-    --secondary: 0 0% 15%; /* Darker Gray */
-    --secondary-foreground: 0 0% 80%;
+    --secondary: 0 0% 92%; /* Light Gray */
+    --secondary-foreground: 0 0% 20%; /* Dark Gray */
 
-    --muted: 0 0% 10%; /* Dark Gray for muted elements */
-    --muted-foreground: 0 0% 60%; /* Lighter Gray for muted text */
+    --muted: 0 0% 95%; /* Very Light Gray for muted elements */
+    --muted-foreground: 0 0% 45%; /* Medium Gray for muted text */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%; /* Keep vibrant red */
+    --destructive-foreground: 0 0% 98%; /* Light text for destructive */
 
-    --border: 0 0% 20%; /* Dark Gray for borders */
-    --input: 0 0% 15%; /* Dark Gray for input backgrounds */
+    --border: 0 0% 85%; /* Light Gray for borders */
+    --input: 0 0% 97%; /* Off-white for input backgrounds */
     --ring: 180 100% 50%; /* Cyan for focus rings */
     
     /* Specific gradient colors */
@@ -40,7 +41,7 @@
     --gradient-pink: 300 100% 50%;
 
     /* Header foreground will be handled by text-gradient typically */
-    --header-foreground: 0 0% 90%; /* Default to light gray if not gradient */
+    --header-foreground: 0 0% 10%; /* Default to dark gray if not gradient */
 
     /* Chart colors from the gradient palette */
     --chart-1: 180 100% 50%;  /* Cyan */
@@ -51,39 +52,46 @@
     
     --radius: 0.5rem;
 
-    /* Sidebar specific colors for LIGHT mode (now effectively dark mode base) */
-    --sidebar-background: 0 0% 3%; /* Very Dark Blue/Almost Black */
-    --sidebar-foreground: 0 0% 85%; /* Light Gray for text */
-    --sidebar-primary: 180 100% 50%; /* Cyan for specific highlights if needed */
-    --sidebar-primary-foreground: 0 0% 100%;
-    /* sidebar-accent will use gradient via Tailwind classes in component */
-    --sidebar-accent: 0 0% 100% / 0.05; /* Subtle transparent white for general hover if no gradient */
-    --sidebar-accent-foreground: 180 100% 50%; /* Cyan for text on hover if gradient bg */
-    --sidebar-border: 0 0% 15%; 
-    --sidebar-ring: 180 100% 50%; 
+    /* Sidebar specific colors for LIGHT mode */
+    --sidebar-background: 220 20% 97%; /* Light Cool Gray */
+    --sidebar-foreground: 0 0% 20%; /* Dark Gray for text */
+    --sidebar-primary: 180 100% 50%; /* Cyan for specific highlights */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 180 100% 50% / 0.1; /* Subtle transparent cyan for hover */
+    --sidebar-accent-foreground: 180 100% 50%; /* Cyan for text on hover */
+    --sidebar-border: 0 0% 85%; /* Light Gray border */
+    --sidebar-ring: 180 100% 50%; /* Cyan for focus ring */
   }
 
-  /* Dark theme variables will be the same as :root as the base is now dark */
+  /* Dark theme variables */
   .dark {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 90%;
-    --card: 0 0% 8%;
+    --background: 0 0% 2%; /* Near Black */
+    --foreground: 0 0% 90%; /* Light Gray for text */
+
+    --card: 0 0% 8%; /* Dark Gray */
     --card-foreground: 0 0% 90%;
-    --popover: 0 0% 5%;
+
+    --popover: 0 0% 5%; /* Very Dark Gray */
     --popover-foreground: 0 0% 90%;
-    --primary: 180 100% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 15%;
+
+    --primary: 180 100% 50%; 
+    --primary-foreground: 0 0% 100%; 
+
+    --accent: 271 76% 53%; 
+    --accent-foreground: 0 0% 100%; 
+    
+    --secondary: 0 0% 15%; /* Darker Gray */
     --secondary-foreground: 0 0% 80%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 271 76% 53%;
-    --accent-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%; /* Dark Gray for muted elements */
+    --muted-foreground: 0 0% 60%; /* Lighter Gray for muted text */
+
     --destructive: 0 70% 50%; /* Adjusted for dark */
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 180 100% 50%;
+
+    --border: 0 0% 20%; /* Dark Gray for borders */
+    --input: 0 0% 15%; /* Dark Gray for input backgrounds */
+    --ring: 180 100% 50%; 
     
     --header-foreground: 0 0% 90%;
 
@@ -93,14 +101,15 @@
     --chart-4: 195 100% 60%;
     --chart-5: 280 80% 65%;
 
-    --sidebar-background: 0 0% 3%;
-    --sidebar-foreground: 0 0% 85%;
-    --sidebar-primary: 180 100% 50%;
+    /* Sidebar specific colors for DARK mode */
+    --sidebar-background: 0 0% 3%; /* Very Dark Blue/Almost Black */
+    --sidebar-foreground: 0 0% 85%; /* Light Gray for text */
+    --sidebar-primary: 180 100% 50%; 
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 100% / 0.05;
-    --sidebar-accent-foreground: 180 100% 50%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 180 100% 50%;
+    --sidebar-accent: 0 0% 100% / 0.05; /* Subtle transparent white for general hover */
+    --sidebar-accent-foreground: 180 100% 50%; /* Cyan for text on hover */
+    --sidebar-border: 0 0% 15%; 
+    --sidebar-ring: 180 100% 50%; 
   }
 }
 
