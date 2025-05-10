@@ -30,8 +30,8 @@ export function AppSidebarContent() {
     <>
       <SidebarHeader className="p-4">
         <Link href="/" className="flex items-center gap-2">
-          <Briefcase className="h-7 w-7 text-primary" />
-          <h1 className="text-xl font-semibold text-foreground group-data-[collapsible=icon]:hidden">
+          <Briefcase className="h-7 w-7 text-primary" /> {/* Uses main primary color, Teal */}
+          <h1 className="text-xl font-semibold text-sidebar-foreground group-data-[collapsible=icon]:hidden"> {/* Uses sidebar-foreground (now light gray) */}
             Analytics AI
           </h1>
         </Link>
@@ -49,8 +49,8 @@ export function AppSidebarContent() {
                   className={cn(
                     "justify-start",
                      pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
-                      ? "bg-primary/10 text-primary dark:bg-primary/20" 
-                      : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                      ? "bg-sidebar-accent text-sidebar-accent-foreground dark:bg-primary/20 dark:text-primary" // Active: use sidebar-accent for bg, sidebar-accent-foreground for text in light mode
+                      : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground" // Inactive: uses new sidebar-foreground, hover uses sidebar-accent and sidebar-accent-foreground
                   )}
                 >
                   <a> {/* <a> tag needed when asChild is true for Link component */}
