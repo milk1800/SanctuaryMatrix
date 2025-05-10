@@ -26,9 +26,9 @@ interface SampleDataTableProps {
 
 export function SampleDataTable({ title, description }: SampleDataTableProps) {
   return (
-    <Card className="shadow-lg col-span-1 md:col-span-2">
+    <Card className="shadow-lg col-span-1 md:col-span-2 backdrop-blur-sm bg-card/80">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-gradient text-glow-primary">{title}</CardTitle>
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
@@ -50,12 +50,11 @@ export function SampleDataTable({ title, description }: SampleDataTableProps) {
                 <TableCell>{item.name}</TableCell>
                 <TableCell>{item.category}</TableCell>
                 <TableCell>{item.value}</TableCell>
-                <TableCell className={parseFloat(item.return) > 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}>{item.return}</TableCell>
+                <TableCell className={parseFloat(item.return) > 2 ? "text-green-400" : parseFloat(item.return) < 0 ? "text-red-400" : "text-foreground"}>{item.return}</TableCell>
                 <TableCell className="text-right">{item.risk}</TableCell>
               </TableRow>
             ))}
           </TableBody>
-          {/* <TableCaption>A list of sample items.</TableCaption> */}
         </Table>
       </CardContent>
     </Card>

@@ -1,4 +1,3 @@
-
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -20,11 +19,12 @@ import {
   ArrowDownCircle, 
   ArrowUpCircle,
   PieChart, 
-  Layers, // Added Layers icon
+  Layers, 
   type LucideIcon 
 } from "lucide-react"
+import { cn } from "@/lib/utils";
 
-// Map icon names (strings) to actual Lucide icon components
+
 const iconComponentsMap: Record<string, LucideIcon> = {
   DollarSign,
   TrendingUp,
@@ -43,7 +43,7 @@ const iconComponentsMap: Record<string, LucideIcon> = {
   ArrowDownCircle,
   ArrowUpCircle,
   PieChart,
-  Layers, // Added Layers to map
+  Layers, 
 };
 
 export type IconName = keyof typeof iconComponentsMap;
@@ -54,19 +54,19 @@ interface SummaryCardProps {
   iconName?: IconName
   description?: string
   trend?: string
-  trendColor?: "text-green-600 dark:text-green-400" | "text-red-600 dark:text-red-400"
+  trendColor?: "text-green-500" | "text-red-500" // Adjusted for better visibility on dark bg
 }
 
 export function SummaryCard({ title, value, iconName, description, trend, trendColor }: SummaryCardProps) {
   const IconComponent = iconName ? iconComponentsMap[iconName] : null;
 
   return (
-    <Card className="shadow-lg">
+    <Card className="shadow-lg backdrop-blur-sm bg-card/80">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">
           {title}
         </CardTitle>
-        {IconComponent && <IconComponent className="h-5 w-5 text-muted-foreground" />}
+        {IconComponent && <IconComponent className={cn("h-5 w-5 text-primary icon-glow-primary")} />}
       </CardHeader>
       <CardContent>
         <div className="text-3xl font-bold text-foreground">{value}</div>

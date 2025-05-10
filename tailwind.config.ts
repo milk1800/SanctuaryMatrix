@@ -10,13 +10,19 @@ export default {
   theme: {
   	extend: {
       fontFamily: {
-        sans: ['var(--font-sansita)'], 
+        sans: ['var(--font-sansita)'], // Reverted to Sansita as per previous instructions; will be Geist eventually
       },
   		colors: {
+        // Direct hex values for use in Tailwind gradient classes
+        'gradient-cyan': '#00f0ff',
+        'gradient-purple': '#8a2be2',
+        'gradient-pink': '#ff00ff',
+
+        // CSS variable based colors
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
-  				DEFAULT: 'hsl((var(--card))',
+  				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
   			},
   			popover: {
@@ -46,9 +52,9 @@ export default {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
-  			header: { // Added for header specific text color
-                foreground: 'hsl(var(--header-foreground))'
-            },
+  			header: {
+          foreground: 'hsl(var(--header-foreground))'
+        },
   			chart: {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
@@ -71,7 +77,7 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)',
-        xl: 'calc(var(--radius) + 4px)' // Added for rounded-xl if needed globally, otherwise apply in component
+        xl: 'calc(var(--radius) + 4px)'
   		},
   		keyframes: {
   			'accordion-down': {

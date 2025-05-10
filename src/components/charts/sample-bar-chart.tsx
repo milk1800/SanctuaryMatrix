@@ -1,4 +1,3 @@
-
 "use client"
 
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from "recharts"
@@ -8,32 +7,30 @@ import type { ChartConfig } from "@/components/ui/chart"
 
 const chartData = [
   {
-    category: "Allocation", // Represents a single group of bars for asset allocation
+    category: "Allocation", 
     Equity: 400000,
     "Fixed Income": 300000,
     Alternatives: 200000,
     Cash: 100000,
   },
-  // Add more objects here if you want to compare allocations, e.g., for different time periods or portfolios
-  // Example: { category: "Benchmark", Equity: 500000, "Fixed Income": 250000, Alternatives: 150000, Cash: 100000 }
 ];
 
 const chartConfig = {
   Equity: {
     label: "Equity",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--chart-1))", // Cyan
   },
   "Fixed Income": {
     label: "Fixed Income",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(var(--chart-2))", // Purple
   },
   Alternatives: {
     label: "Alternatives",
-    color: "hsl(var(--chart-3))",
+    color: "hsl(var(--chart-3))", // Pink
   },
   Cash: {
     label: "Cash",
-    color: "hsl(var(--chart-4))",
+    color: "hsl(var(--chart-4))", // Lighter Cyan
   },
 } satisfies ChartConfig;
 
@@ -44,25 +41,24 @@ interface SampleBarChartProps {
 
 export function SampleBarChart({ title, description }: SampleBarChartProps) {
   return (
-    <Card className="shadow-lg">
+    <Card className="shadow-lg backdrop-blur-sm bg-card/80">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-gradient text-glow-primary">{title}</CardTitle>
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="h-[300px] w-full">
           <BarChart data={chartData} accessibilityLayer>
-            <CartesianGrid vertical={false} />
+            <CartesianGrid vertical={false} strokeDasharray="3 3" strokeOpacity={0.5} />
             <XAxis
-              dataKey="category" // Changed from "month"
+              dataKey="category" 
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              // Tick formatter can be simple if "category" is descriptive enough
-              // tickFormatter={(value) => value.slice(0, 3)} // Remove or adjust if category names are short
+              stroke="hsl(var(--muted-foreground))"
             />
-            <YAxis />
-            <Tooltip content={<ChartTooltipContent />} />
+            <YAxis stroke="hsl(var(--muted-foreground))" />
+            <Tooltip content={<ChartTooltipContent />} cursor={{ fill: 'hsl(var(--accent) / 0.1)' }} />
             <Legend />
             <Bar dataKey="Equity" fill="var(--color-Equity)" radius={4} />
             <Bar dataKey="Fixed Income" fill="var(--color-Fixed Income)" radius={4} />

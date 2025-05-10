@@ -1,90 +1,106 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 220 20% 96%; /* Cooler, very light gray */
-    --foreground: 220 10% 20%; /* Dark cool gray */
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 220 10% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 20%;
-    --primary: 21 83% 50%; /* UPDATED: Deep Orange from #EA580C */
-    --primary-foreground: 0 0% 100%; /* UPDATED: White for text on Deep Orange */
-    --secondary: 220 15% 90%; /* Light cool gray */
-    --secondary-foreground: 220 10% 20%;
-    --muted: 220 15% 90%; /* Same as secondary for muted backgrounds */
-    --muted-foreground: 220 10% 45%; /* Slightly lighter cool gray for muted text */
-    --accent: 21 83% 50%; /* UPDATED: Deep Orange, same as primary */
-    --accent-foreground: 0 0% 100%; /* UPDATED: White, same as primary-foreground */
+    --background: 0 0% 2%; /* Near Black */
+    --foreground: 0 0% 90%; /* Light Gray for text */
+
+    --card: 0 0% 8%; /* Dark Gray */
+    --card-foreground: 0 0% 90%;
+
+    --popover: 0 0% 5%; /* Very Dark Gray */
+    --popover-foreground: 0 0% 90%;
+
+    /* Primary will be Cyan from the gradient for general accents */
+    --primary: 180 100% 50%; /* Cyan: #00f0ff */
+    --primary-foreground: 0 0% 100%; /* White for text on primary/gradient */
+
+    /* Accent will be Purple from the gradient */
+    --accent: 271 76% 53%; /* Electric Purple: #8a2be2 */
+    --accent-foreground: 0 0% 100%; /* White */
+    
+    --secondary: 0 0% 15%; /* Darker Gray */
+    --secondary-foreground: 0 0% 80%;
+
+    --muted: 0 0% 10%; /* Dark Gray for muted elements */
+    --muted-foreground: 0 0% 60%; /* Lighter Gray for muted text */
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 21 83% 50%; /* UPDATED: Deep Orange for focus rings */
-    
-    --header-foreground: 262 68% 42%; /* NEW: Royal Purple from #5B21B6 for header text */
 
-    --chart-1: 194 100% 50%; /* Kept old primary as chart color for now */
-    --chart-2: 200 58% 39%;
-    --chart-3: 220 37% 24%;
-    --chart-4: 170 74% 66%;
-    --chart-5: 190 87% 67%;
+    --border: 0 0% 20%; /* Dark Gray for borders */
+    --input: 0 0% 15%; /* Dark Gray for input backgrounds */
+    --ring: 180 100% 50%; /* Cyan for focus rings */
+    
+    /* Specific gradient colors */
+    --gradient-cyan: 180 100% 50%;
+    --gradient-purple: 271 76% 53%;
+    --gradient-pink: 300 100% 50%;
+
+    /* Header foreground will be handled by text-gradient typically */
+    --header-foreground: 0 0% 90%; /* Default to light gray if not gradient */
+
+    /* Chart colors from the gradient palette */
+    --chart-1: 180 100% 50%;  /* Cyan */
+    --chart-2: 271 76% 53%;  /* Purple */
+    --chart-3: 300 100% 50%;  /* Pink */
+    --chart-4: 195 100% 60%;  /* Lighter/variant Cyan */
+    --chart-5: 280 80% 65%;   /* Lighter/variant Purple */
     
     --radius: 0.5rem;
 
-    /* Sidebar specific colors for LIGHT mode */
-    --sidebar-background: 211 53% 11%; /* Dark Navy Blue from #0D1B2A */
-    --sidebar-foreground: 220 15% 95%; /* Light cool gray for text on navy */
-    /* --sidebar-primary was old primary, now uses main primary which is orange. If specific sidebar accent needed, redefine here */
-    --sidebar-primary: 21 83% 50%; /* UPDATED to new primary for consistency if used */
-    --sidebar-primary-foreground: 0 0% 100%; /* UPDATED to new primary-foreground */
-    --sidebar-accent: 211 45% 18%; /* Slightly lighter Navy for hover/active item background */
-    /* --sidebar-accent-foreground was old primary. Let's use a contrasting color for sidebar accent text if needed, or new primary. */
-    --sidebar-accent-foreground: 21 83% 50%; /* Bright Orange text on dark navy hover */
-    --sidebar-border: 211 40% 22%; /* Slightly lighter Navy for internal borders in sidebar */
-    --sidebar-ring: 21 83% 50%; /* UPDATED: Deep Orange for focus rings on sidebar items */
+    /* Sidebar specific colors for LIGHT mode (now effectively dark mode base) */
+    --sidebar-background: 0 0% 3%; /* Very Dark Blue/Almost Black */
+    --sidebar-foreground: 0 0% 85%; /* Light Gray for text */
+    --sidebar-primary: 180 100% 50%; /* Cyan for specific highlights if needed */
+    --sidebar-primary-foreground: 0 0% 100%;
+    /* sidebar-accent will use gradient via Tailwind classes in component */
+    --sidebar-accent: 0 0% 100% / 0.05; /* Subtle transparent white for general hover if no gradient */
+    --sidebar-accent-foreground: 180 100% 50%; /* Cyan for text on hover if gradient bg */
+    --sidebar-border: 0 0% 15%; 
+    --sidebar-ring: 180 100% 50%; 
   }
+
+  /* Dark theme variables will be the same as :root as the base is now dark */
   .dark {
-    --background: 220 15% 10%; /* Very dark cool gray */
-    --foreground: 220 10% 80%; /* Light cool gray */
-    --card: 220 15% 15%; /* Darker card background */
-    --card-foreground: 220 10% 80%;
-    --popover: 220 15% 10%;
-    --popover-foreground: 220 10% 80%;
-    --primary: 21 83% 50%; /* UPDATED: Deep Orange */
-    --primary-foreground: 0 0% 100%; /* UPDATED: White */
-    --secondary: 220 15% 20%; /* Dark cool gray */
-    --secondary-foreground: 220 10% 80%;
-    --muted: 220 15% 20%;
-    --muted-foreground: 220 10% 60%;
-    --accent: 21 83% 50%; /* UPDATED: Deep Orange */
-    --accent-foreground: 0 0% 100%; /* UPDATED: White */
-    --destructive: 0 62.8% 30.6%;
+    --background: 0 0% 2%;
+    --foreground: 0 0% 90%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 80%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 271 76% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%; /* Adjusted for dark */
     --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 25%;
-    --input: 220 15% 25%;
-    --ring: 21 83% 50%; /* UPDATED: Deep Orange */
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 180 100% 50%;
     
-    --header-foreground: 262 68% 42%; /* NEW: Royal Purple for header text */
+    --header-foreground: 0 0% 90%;
 
-    --chart-1: 194 100% 50%; 
-    --chart-2: 200 60% 45%;
-    --chart-3: 220 80% 55%;
-    --chart-4: 170 65% 60%;
-    --chart-5: 190 75% 55%;
+    --chart-1: 180 100% 50%;
+    --chart-2: 271 76% 53%;
+    --chart-3: 300 100% 50%;
+    --chart-4: 195 100% 60%;
+    --chart-5: 280 80% 65%;
 
-    /* Sidebar specific colors for DARK mode */
-    --sidebar-background: 220 15% 12%; 
-    --sidebar-foreground: 220 10% 75%; 
-    --sidebar-primary: 21 83% 50%; /* UPDATED to new primary */
-    --sidebar-primary-foreground: 0 0% 100%; /* UPDATED to new primary-foreground */
-    --sidebar-accent: 220 15% 18%; 
-    --sidebar-accent-foreground: 21 83% 50%; /* UPDATED to new primary for hover text */
-    --sidebar-border: 220 15% 25%; 
-    --sidebar-ring: 21 83% 50%; /* UPDATED: Deep Orange */
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 100% / 0.05;
+    --sidebar-accent-foreground: 180 100% 50%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 180 100% 50%;
   }
 }
 
@@ -98,7 +114,20 @@
 }
 
 @layer utilities {
-  .fab-glow {
+  .text-gradient {
+    @apply bg-gradient-to-r from-gradient-cyan via-gradient-purple to-gradient-pink bg-clip-text text-transparent;
+  }
+  .text-glow-primary { /* Glow with primary color (cyan) */
+    text-shadow: 0 0 6px hsl(var(--primary));
+  }
+  .icon-glow-primary { /* Glow for icons with primary color (cyan) */
+    filter: drop-shadow(0 0 4px hsl(var(--primary)));
+  }
+  .element-glow-primary { /* Box shadow glow for elements */
+     box-shadow: 0 0 8px 2px hsl(var(--primary) / 0.7);
+  }
+
+  .fab-glow { /* Updated FAB glow to use primary (cyan) */
     box-shadow: 0 0 8px 2px hsl(var(--primary)), 0 0 12px 4px hsla(var(--primary), 0.6);
     animation: fab-pulse 2.5s infinite ease-in-out;
   }

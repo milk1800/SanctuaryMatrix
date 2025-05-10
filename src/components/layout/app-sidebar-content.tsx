@@ -1,4 +1,3 @@
-
 "use client"
 
 import Link from "next/link"
@@ -30,8 +29,8 @@ export function AppSidebarContent() {
     <>
       <SidebarHeader className="p-4">
         <Link href="/" className="flex items-center gap-2">
-          <Briefcase className="h-7 w-7 text-primary" /> {/* Uses main primary color, Teal */}
-          <h1 className="text-xl font-semibold text-sidebar-foreground group-data-[collapsible=icon]:hidden"> {/* Uses sidebar-foreground (now light gray) */}
+          <Briefcase className="h-7 w-7 text-primary icon-glow-primary" /> 
+          <h1 className="text-xl font-semibold text-sidebar-foreground group-data-[collapsible=icon]:hidden"> 
             Sanctuary Matrix
           </h1>
         </Link>
@@ -39,31 +38,36 @@ export function AppSidebarContent() {
       <SidebarSeparator />
       <SidebarContent className="p-2">
         <SidebarMenu>
-          {navItems.map((item) => (
-            <SidebarMenuItem key={item.href}>
-              <Link href={item.href} legacyBehavior passHref>
-                <SidebarMenuButton
-                  asChild
-                  isActive={pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))}
-                  tooltip={{children: item.label, className: "ml-2"}}
-                  className={cn(
-                    "justify-start",
-                     pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground dark:bg-primary/20 dark:text-primary" // Active: use sidebar-accent for bg, sidebar-accent-foreground for text in light mode
-                      : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground" // Inactive: uses new sidebar-foreground, hover uses sidebar-accent and sidebar-accent-foreground
-                  )}
-                >
-                  <a> {/* <a> tag needed when asChild is true for Link component */}
-                    <item.icon className="h-5 w-5" />
-                    <span className="group-data-[collapsible=icon]:hidden text-lg font-semibold">{item.label}</span> {/* Updated font size and weight */}
-                  </a>
-                </SidebarMenuButton>
-              </Link>
-            </SidebarMenuItem>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+            return (
+              <SidebarMenuItem key={item.href}>
+                <Link href={item.href} legacyBehavior passHref>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={isActive}
+                    tooltip={{children: item.label, className: "ml-2"}}
+                    className={cn(
+                      "justify-start text-sidebar-foreground",
+                       isActive
+                        ? "bg-gradient-to-r from-gradient-cyan via-gradient-purple to-gradient-pink text-primary-foreground" 
+                        : "hover:bg-gradient-to-r hover:from-gradient-cyan/70 hover:via-gradient-purple/70 hover:to-gradient-pink/70 hover:text-primary-foreground"
+                    )}
+                  >
+                    <a> 
+                      <item.icon className={cn("h-5 w-5", isActive ? "text-primary-foreground" : "text-primary icon-glow-primary")} />
+                      <span className={cn(
+                        "group-data-[collapsible=icon]:hidden text-lg font-semibold",
+                        isActive ? "text-primary-foreground" : "text-sidebar-foreground"
+                      )}>{item.label}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </Link>
+              </SidebarMenuItem>
+            )}
+          )}
         </SidebarMenu>
       </SidebarContent>
     </>
   )
 }
-

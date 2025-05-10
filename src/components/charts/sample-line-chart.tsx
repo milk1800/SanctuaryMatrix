@@ -1,6 +1,6 @@
 "use client"
 
-import { Line, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts"
+import { Line, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from "recharts" // ResponsiveContainer removed as ChartContainer handles it
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { ChartTooltipContent, ChartContainer } from "@/components/ui/chart"
 import type { ChartConfig } from "@/components/ui/chart"
@@ -17,11 +17,11 @@ const chartData = [
 const chartConfig = {
   value1: {
     label: "Series A",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(var(--chart-1))", // Cyan
   },
   value2: {
     label: "Series B",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(var(--chart-2))", // Purple
   },
 } satisfies ChartConfig;
 
@@ -32,27 +32,28 @@ interface SampleLineChartProps {
 
 export function SampleLineChart({ title, description }: SampleLineChartProps) {
   return (
-    <Card className="shadow-lg">
+    <Card className="shadow-lg backdrop-blur-sm bg-card/80">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-gradient text-glow-primary">{title}</CardTitle>
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="h-[300px] w-full">
           <LineChart data={chartData} accessibilityLayer>
-            <CartesianGrid vertical={false} />
+            <CartesianGrid vertical={false} strokeDasharray="3 3" strokeOpacity={0.5}/>
             <XAxis
               dataKey="date"
               tickLine={false}
               axisLine={false}
               tickMargin={8}
+              stroke="hsl(var(--muted-foreground))"
               tickFormatter={(value) => new Date(value + '-01').toLocaleDateString('en-US', { month: 'short' })}
             />
-            <YAxis />
-            <Tooltip content={<ChartTooltipContent />} />
+            <YAxis stroke="hsl(var(--muted-foreground))" />
+            <Tooltip content={<ChartTooltipContent />} cursor={{ stroke: 'hsl(var(--accent))', strokeWidth: 1, strokeDasharray: "3 3" }} />
             <Legend />
-            <Line type="monotone" dataKey="value1" stroke="var(--color-value1)" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="value2" stroke="var(--color-value2)" strokeWidth={2} dot={false} />
+            <Line type="monotone" dataKey="value1" stroke="var(--color-value1)" strokeWidth={2.5} dot={{ r: 4, fill: "var(--color-value1)", strokeWidth:0 }} activeDot={{ r: 6 }} />
+            <Line type="monotone" dataKey="value2" stroke="var(--color-value2)" strokeWidth={2.5} dot={{ r: 4, fill: "var(--color-value2)", strokeWidth:0 }} activeDot={{ r: 6 }} />
           </LineChart>
         </ChartContainer>
       </CardContent>

@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -9,21 +10,21 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl hover:shadow-md", // Added rounded-xl and hover:shadow-md
+        default: "bg-gradient-to-r from-gradient-cyan via-gradient-purple to-gradient-pink text-primary-foreground hover:brightness-90 rounded-xl shadow-md hover:shadow-lg", // Gradient background, white text, hover effect
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md", // Kept rounded-md for other variants or change to rounded-xl if all buttons should be xl
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md", 
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md",
+          "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground rounded-md", // Transparent bg for outline
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md",
         ghost: "hover:bg-accent hover:text-accent-foreground rounded-md",
-        link: "text-primary underline-offset-4 hover:underline", // No rounding for link
+        link: "text-primary underline-offset-4 hover:underline", 
       },
       size: {
         default: "h-10 px-4 py-2",
-        sm: "h-9 px-3", // Default rounded-md will apply from base if not overridden by variant
-        lg: "h-11 px-8", // Default rounded-md will apply
-        icon: "h-10 w-10 rounded-md", // Default rounded-md for icon buttons
+        sm: "h-9 px-3", 
+        lg: "h-11 px-8", 
+        icon: "h-10 w-10 rounded-full", // Changed icon to rounded-full for consistency with FAB
       },
     },
     defaultVariants: {
@@ -42,11 +43,6 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
-    // If a variant like 'default' already specifies rounding, it takes precedence.
-    // Otherwise, if size specifies rounding, it might.
-    // If neither, the base CVA 'rounded-md' applies.
-    // For full consistency, one might want to put rounded-xl in the base CVA string or ensure each variant/size explicitly defines its rounding.
-    // The current setup specifically targets 'default' variant for 'rounded-xl'. Other buttons will use 'rounded-md'.
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -15,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { Card } from '@/components/ui/card';
+import { Card, CardTitle } from '@/components/ui/card'; // CardTitle import for potential direct use
 
 export default function AssetAnalyticsPage() {
   const [selectedAdvisor, setSelectedAdvisor] = useState<string>("bajorek");
@@ -23,9 +22,8 @@ export default function AssetAnalyticsPage() {
 
   return (
     <div className="space-y-6">
-      {/* Title is in DashboardHeader */}
       
-      <Card className="p-4 shadow-lg">
+      <Card className="p-4 shadow-lg backdrop-blur-sm bg-card/80">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <Label htmlFor="advisor-filter" className="block text-sm font-medium text-muted-foreground mb-2">
@@ -60,51 +58,46 @@ export default function AssetAnalyticsPage() {
       </Card>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {/* Row 1: Core Performance Metrics */}
         <SummaryCard 
           title="Total Assets Under Management" 
           value="$12,345,678" 
           iconName={"DollarSign" as IconName}
           trend="+2.5% from last month"
-          trendColor="text-green-600 dark:text-green-400"
+          trendColor="text-green-500" 
         />
         <SummaryCard 
           title="YTD Return" 
           value="7.8%" 
           iconName={"TrendingUp" as IconName}
           trend="-0.5% from last quarter"
-          trendColor="text-red-600 dark:text-red-400"
+          trendColor="text-red-500" 
         />
         <SummaryCard
           title="% of Accounts in Model Portfolios"
           value="65%"
           iconName={"PieChart" as IconName}
         />
-
-        {/* Row 2: Flow Activity */}
         <SummaryCard
           title="Inflows (MTD)"
           value="$500,000"
           iconName={"ArrowDownCircle" as IconName}
           trend="+10% vs last month"
-          trendColor="text-green-600 dark:text-green-400"
+          trendColor="text-green-500"
         />
         <SummaryCard
           title="Outflows (MTD)"
           value="$200,000"
           iconName={"ArrowUpCircle" as IconName}
           trend="+5% vs last month" 
-          trendColor="text-red-600 dark:text-red-400"
+          trendColor="text-red-500"
         />
         <SummaryCard
           title="Net Flows (MTD)"
           value="$300,000"
           iconName={"TrendingUp" as IconName} 
           trend="+$50k vs last month"
-          trendColor="text-green-600 dark:text-green-400"
+          trendColor="text-green-500"
         />
-        
-        {/* Row 3: Removed "Average Asset Age", "Number of Holdings", "Cash Allocation %" */}
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
