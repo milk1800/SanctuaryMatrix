@@ -1,8 +1,9 @@
+
 "use client"
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Briefcase, BarChartBig, Users, TrendingUp, ClipboardList, Filter, FileText } from "lucide-react"
+import { Briefcase, BarChartBig, Users, TrendingUp, ClipboardList, Filter, FileText, LayoutGrid } from "lucide-react"
 import {
   SidebarHeader,
   SidebarContent,
@@ -20,6 +21,7 @@ const navItems = [
   { href: "/benchmark-analytics", label: "Benchmark Analytics", icon: ClipboardList },
   { href: "/pipeline-prospects", label: "Pipeline & Prospects", icon: Filter },
   { href: "/live-reports", label: "LiveReports", icon: FileText },
+  { href: "/portfolio-matrix", label: "Portfolio Matrix", icon: LayoutGrid }, 
 ]
 
 export function AppSidebarContent() {
@@ -71,3 +73,4 @@ export function AppSidebarContent() {
     </>
   )
 }
+

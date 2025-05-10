@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -20,6 +21,8 @@ import {
   ArrowUpCircle,
   PieChart, 
   Layers, 
+  LayoutGrid, // Added LayoutGrid
+  ShieldAlert, // Added ShieldAlert
   type LucideIcon 
 } from "lucide-react"
 import { cn } from "@/lib/utils";
@@ -44,6 +47,8 @@ const iconComponentsMap: Record<string, LucideIcon> = {
   ArrowUpCircle,
   PieChart,
   Layers, 
+  LayoutGrid, // Added LayoutGrid
+  ShieldAlert, // Added ShieldAlert
 };
 
 export type IconName = keyof typeof iconComponentsMap;
@@ -76,3 +81,4 @@ export function SummaryCard({ title, value, iconName, description, trend, trendC
     </Card>
   )
 }
+

@@ -1,3 +1,4 @@
+
 "use client"
 
 import { usePathname } from "next/navigation"
@@ -11,6 +12,7 @@ const pageTitles: Record<string, string> = {
   "/benchmark-analytics": "Benchmark Analytics",
   "/pipeline-prospects": "Pipeline & Prospects",
   "/live-reports": "LiveReports",
+  "/portfolio-matrix": "Portfolio Matrix",
   "/": "Dashboard" // Fallback or default title
 };
 

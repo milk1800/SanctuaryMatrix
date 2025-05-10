@@ -13,6 +13,7 @@ const tabNameMapping: Record<string, string> = {
   "/benchmark-analytics": "Benchmark Analytics",
   "/pipeline-prospects": "Pipeline & Prospects",
   "/live-reports": "LiveReports",
+  "/portfolio-matrix": "Portfolio Matrix",
   "/": "Dashboard Overview"
 };
 
@@ -36,3 +37,4 @@ export function MatrixAiAssistant() {
     </>
   );
 }
+
